@@ -7,6 +7,7 @@ body {
     font-weight: 700;
 }
 
+
 .instructions {
     background-color: #00acb0;
     padding: 5px;
@@ -46,9 +47,14 @@ input[type="submit"] {
 .message:nth-child(even) {
     background-color: #f8f8f8;
 }
+/* 
+.mdc-card {
+    height: 200px;
+    width: 200px;
+  } */
 
 .navbar {
-  background-color: #00acb0;
+  background-color: #546a67;
   width: 100%;
   border-radius: 0px;
 }
@@ -73,8 +79,19 @@ li a {
 
 }
 
+
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     text-decoration: underline;
     color: #eee;
 }
+
+.logOutButton{
+    justify-content: flex-end;
+right:    0;
+bottom:   0;
+}
+
+
+
+

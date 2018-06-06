@@ -13,6 +13,10 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const ConsonantRouter = require('./routes/consonant.router');
+const VowelRouter = require('./routes/vowel.router');
+const VocabularyRouter = require('./routes/vocabulary.router');
+
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,6 +31,9 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/api/consonant', ConsonantRouter);
+app.use('/api/vowel', VowelRouter);
+app.use('/api/vocabulary', VocabularyRouter);
 
 // Serve static files
 app.use(express.static('build'));

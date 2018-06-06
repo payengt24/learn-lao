@@ -1,0 +1,47 @@
+html,body { 
+    height:100%;
+    margin: 0px;
+}
+
+#react-root{
+    height:100%;
+}
+
+.app-div{
+    height:100%;
+}
+
+
+.homePage{
+    height: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url('./image/elephant.jpg');
+   
+    /* background-color: grey;  */
+}
+
+
+.homePage{
+    text-align: center;
+}
+
+
+.learnLaoHeader{
+    margin: auto;
+    width: 25%;
+    background-color: #c1b59b;
+    padding: 1px;
+    opacity: 0.8;
+}
+
+.homePageBoarder{
+    margin: auto;
+    width: 15%;
+    background-color: #c1b59b;
+    padding: 1px;
+    opacity: 0.8;
+}
+

@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import logger from 'redux-logger';
 
+import logger from 'redux-logger';
 import reducer from './redux/reducers';
 
 import App from './App';
 import rootSaga from './redux/sagas';
+
 
 // Initializing to an empty object, but here is where you could
 // preload your redux state with initial values (from localStorage, perhaps)
@@ -35,3 +36,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('react-root'),
 );
+
