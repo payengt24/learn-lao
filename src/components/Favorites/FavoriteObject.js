@@ -19,7 +19,9 @@ class FavoriteObject extends Component {
     }
 
     handleEditClick = () => {
-        this.edit = true;
+        this.setState({
+            edit: true,
+        })
     }
 
     handleChangeFor = (property) => (event) => {
@@ -36,7 +38,7 @@ class FavoriteObject extends Component {
         this.props.dispatch(action);
     }
 
-    handleSave = () => {
+    handleSave = (id) => {
         
     }
 

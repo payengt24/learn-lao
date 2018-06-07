@@ -4,7 +4,17 @@ import { Link } from 'react-router-dom';
 
 
 
-const Nav = () => (
+const Nav = (props) => {
+  console.log('...... props:')
+  console.log(props);
+  const loginButton = props.isLogin ? (
+    <li>
+      <Link to="/logout">
+        Logout
+      </Link>
+    </li>
+  ) : '';
+  return (
   <div className="navbar">
     <div>
       <div className="logo">
@@ -36,11 +46,7 @@ const Nav = () => (
             Favorites
           </Link>
         </li>
-        <li>
-          <Link to="/logout">
-            Logout
-          </Link>
-        </li>
+        {loginButton}
 
 
         {/* <li><button className="logOutButton" onClick={this.logout}>Log Out</button></li> */}
@@ -49,6 +55,7 @@ const Nav = () => (
 
 
   </div>
-);
+)
+};
 
 export default Nav;

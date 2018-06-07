@@ -23,7 +23,7 @@ const mapReduxStateToProps = (reduxState) => (
 class Consonants extends Component {
     constructor(props) {
         super(props);
-        
+
     }
 
     componentDidMount() {
@@ -58,7 +58,7 @@ class Consonants extends Component {
                             <i className="material-icons">favorite</i>
                         </Button>
                         <Button size="small" color="primary">
-                            <i className="material-icons">favorite_border</i> 
+                            <i className="material-icons">favorite_border</i>
                         </Button>
                     </CardActions>
                 </Card>
@@ -67,8 +67,26 @@ class Consonants extends Component {
 
         return (
             <div>
+                <header>
+                    <div className="image">
+                        <div className="text-box-user">
+                            <h1 className="heading-primary">
+                                <span>
+                                    <div className="logo-box">
+
+                                    </div>
+                                </span>
+                                <span className="heading-primary-main-register">
+                                    {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
+                                    Sa-bai-dee
+                            </span>
+                            </h1>
+
+                        </div>
+                    </div>
+                </header>
                 <Nav />
-                <h2>Consonants</h2>
+                {/* <h2>Consonants</h2> */}
 
                 {consonantDisplay}
             </div>

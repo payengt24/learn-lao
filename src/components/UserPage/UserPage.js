@@ -48,44 +48,56 @@ class UserPage extends Component {
     //   );
     // }
 
+    console.log(this);
     return (
-      <div className="homePage">
-        {/* {content} */}
-        <div className="learnLaoHeader">
-          <h1>Learn Lao</h1>
+      <div className="background">
+        <div className="homePage">
+          {/* {content} */}
+          <div className="text-box-user">
+            <h1 className="heading-primary">
+              <span>
+                <div className="logo-box">
+                  <img src="data/images/logo.png" alt="Logo" className="logo" />
+                </div>
+              </span>
+              <span className="heading-primary-main-register">Sa-bai-dee</span>
+              <span className="heading-primary-sub-register">Learn Lao</span>
+            </h1>
 
-        </div>
-        <br />
+          </div>
+          <br />
 
 
-        <div>
-          <div class="topnav">
-            <div className="homePageBoarder">
-              <h2><Link to="/user">Home</Link></h2>
+          <div>
+
+            <div class="topnav">
+              <div className="homePageBoarder">
+                <h2><Link to="/user" className="link">Home</Link></h2>
+              </div>
+              <br />
+              <div className="homePageBoarder">
+                <h2><Link to="/Consonants" className="link">Consonants</Link></h2>
+              </div>
+              <br />
+              <div className="homePageBoarder">
+                <h2><Link to="/vowels" className="link">Vowels</Link></h2>
+              </div>
+              <br />
+              <div className="homePageBoarder">
+                <h2><Link to="/vocabulary" className="link">Vocabulary</Link></h2>
+              </div>
+              <br />
+              <div className="homePageBoarder">
+                <h2><Link to="/favorites" className="link">Favorites</Link></h2>
+              </div>
+              <br />
+              <a href='#' className="homePageBoarder" onClick={this.logout} className="link">Log Out</a>
             </div>
-            <br />
-            <div className="homePageBoarder">
-              <h2><Link to="/Consonants">Consonants</Link></h2>
-            </div>
-            <br />
-            <div className="homePageBoarder">
-              <h2><Link to="/vowels">Vowels</Link></h2>
-            </div>
-            <br />
-            <div className="homePageBoarder">
-              <h2><Link to="/vocabulary">Vocabulary</Link></h2>
-            </div>
-            <br />
-            <div className="homePageBoarder">
-              <h2><Link to="/favorites">Favorites</Link></h2>
-            </div>
-            <br />
-            <a href='#' className="homePageBoarder" onClick={this.logout}>Log Out</a>
+
           </div>
 
+
         </div>
-
-
       </div>
     );
   }

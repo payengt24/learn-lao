@@ -46,7 +46,7 @@ class Vocabulary extends Component {
                             <i className="material-icons">favorite</i>
                         </Button>
                         <Button size="small" color="primary">
-                            <i className="material-icons">favorite_border</i> 
+                            <i className="material-icons">favorite_border</i>
                         </Button>
                     </CardActions>
                 </Card>
@@ -55,10 +55,28 @@ class Vocabulary extends Component {
 
         return (
             <div>
-                <Nav />
-                <h2>Vocabulary</h2>
+                <header>
+                    <div className="image">
+                        <div className="text-box-user">
+                            <h1 className="heading-primary">
+                                <span>
+                                    <div className="logo-box">
 
-            {vocabularyDisplay}
+                                    </div>
+                                </span>
+                                <span className="heading-primary-main-register">
+                                    {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
+                                    Sa-bai-dee
+                            </span>
+                            </h1>
+
+                        </div>
+                    </div>
+                </header>
+                <Nav isLogin="true" />
+                {/* <h2>Vocabulary</h2> */}
+
+                {vocabularyDisplay}
 
             </div>
         );

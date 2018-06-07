@@ -1,6 +1,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: gray;
+    background-color:  gray;
+    
+    padding: 30px;
 }
 
 .instructions h1 {
@@ -93,6 +95,136 @@ right:    0;
 bottom:   0;
 }
 
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; 
+
+
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; 
+}
+
+@keyframes moveInLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+@keyframes moveInRight {
+    0%{
+        opacity: 0;
+        transform: translateX(100px)
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+.heading-primary-main-register{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+}
+
+.heading-primary-sub-register{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+
+.log-box{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+@keyframes moveInBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(30px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+/* .form {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+} */
 
 
 
+
+
+
+
+
+.background-image{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,#7ed56f44, #708090), url(../images/bg.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)
+}
+
+.image{
+    height: 10vh;
+    background-image: linear-gradient(to right bottom,#7ed56f44, #708090), url(../images/bg.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%) */
+}
