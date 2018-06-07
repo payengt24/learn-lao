@@ -1,11 +1,11 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import { CONSONANT_ACTIONS } from '../actions/consonantActions';
-
 import { getConsonant } from '../requests/consonantRequests';
 
 function* fetchConsonant(action) {
     try {
         const consonant = yield getConsonant()
+        console.log('retrieved consonants data', consonant);
         yield put({
             type: CONSONANT_ACTIONS.SET,
             payload: consonant

@@ -6,7 +6,6 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import Card from '@material/card/dist/mdc.card.css'
 import Header from './components/Header/Header';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
@@ -16,6 +15,8 @@ import Consonants from './components/Consonants/Consonants';
 import Vowels from './components/Vowels/Vowels';
 import Vocabulary from './components/Vocabulary/Vocabulary';
 import Favorites from './components/Favorites/Favorites';
+
+
 
 
 import './styles/main.css';

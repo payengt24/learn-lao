@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     Consonant.find({}).then((result) => {
         res.send(result);
     }).catch((error) => {
-        console.log('Error GET /api/Consonant', error)
+        console.log('Error GET /api/consonant', error)
         res.sendStatus(500);
     });
 })

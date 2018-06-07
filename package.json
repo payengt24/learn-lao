@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@material-ui/core": "^1.2.0",
     "@material/card": "^0.36.0",
     "axios": "^0.17.1",
     "bcrypt": "^2.0.1",

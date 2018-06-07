@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 // Mongoose Schema
 const VowelSchema = new Schema({
-    vowel_img: { type: String, required: true },
-    vowel_mp3: { type: String, required: true },
+    img_path: { type: String, required: true },
+    mp3_path: { type: String, required: true },
 });
 
-module.exports = mongoose.model('Vowel', VowelSchema);
+module.exports = mongoose.model('vowel', VowelSchema);

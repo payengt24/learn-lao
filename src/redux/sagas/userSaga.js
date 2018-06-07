@@ -24,6 +24,8 @@ function* fetchUser() {
     });
   }
 }
+
+
 /*
   Starts fetchUser on each dispatched `FETCH_USER` action.
   Allows concurrent fetches of user.

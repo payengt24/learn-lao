@@ -8,4 +8,4 @@ const ConsonantSchema = new Schema({
   mp3_path: { type: String, required: true },
 });
 
-module.exports = mongoose.model('Consonant', ConsonantSchema);
+module.exports = mongoose.model('consonant', ConsonantSchema);

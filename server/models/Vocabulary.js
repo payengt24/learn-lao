@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 // Mongoose Schema
 const VocabularySchema = new Schema({
-    vocabulary_img: { type: String, required: true },
-    vocabulary_mp3: { type: String, required: true },
+    img_path: { type: String, required: true },
+    mp3_path: { type: String, required: true },
 });
 
-module.exports = mongoose.model('Vocabulary', VocabularySchema);
+module.exports = mongoose.model('vocabulary', VocabularySchema);

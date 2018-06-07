@@ -6,6 +6,19 @@ const userStrategy = require('../strategies/user.strategy');
 
 const router = express.Router();
 
+// Person.find()
+// .then(people => {
+//   console.log(people);
+// });
+
+// Person.findByIdAndUpdate('12312easdfq23da', {})
+// .then(result => {
+
+// });
+
+// {favorites: {$addToSet}}
+// $pull 
+
 // Handles Ajax request for user information if user is authenticated
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from database

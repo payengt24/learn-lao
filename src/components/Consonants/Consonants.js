@@ -5,18 +5,26 @@ import { connect } from 'react-redux';
 import { getConsonant } from '../../redux/actions/consonantActions'
 
 
+
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+
 const mapReduxStateToProps = (reduxState) => (
     { reduxState }
 );
 
-
 class Consonants extends Component {
     constructor(props) {
         super(props);
-        // /Users/payeng/prime/kochab/solo-project/learn-lao/src/mp3/consonants/h1.mp3
+        
     }
-
-    //this.state.img_path + img.img_path
 
     componentDidMount() {
         this.props.dispatch(getConsonant());
@@ -24,29 +32,36 @@ class Consonants extends Component {
 
     render() {
         console.log('this.state', this.state)
-        // console.log('this', this)
         console.log('sadsdredux', this.props.reduxState.consonant)
 
         let consonantDisplay = this.props.reduxState.consonant.consonant.map(((consonant) => {
             console.log('img path:', ('data/images/consonants/' + consonant.img_path));
             return (
 
-                <div className="mdc-card" key={consonant._id}>
-                    <div className="mdc-card__media mdc-card__media--square">
-                        <img src={('data/images/consonants/' + consonant.img_path)} />
-                    </div>
-                    <div className="mdc-card__actions">
-                        <div className="mdc-card__action-buttons">
+                <Card key={consonant._id} className='card'>
+                    <CardMedia
+                        className='cardMedia'
+                        image={('data/images/consonants/' + consonant.img_path)}
+                        title="title"
+                    />
+                    {/* <CardContent>
+                        <Typography gutterBottom variant="headline" component="h2">
+                            Lizard
+                    </Typography>
+                        <Typography component="p">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                            across all continents except Antarctica
+                    </Typography>
+                    </CardContent> */}
+                    <CardActions>
+                        <Button size="small" color="primary">
                             <i className="material-icons">favorite</i>
-                            <i className="material-icons">favorite_border</i>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Favorite</button>
-                        </div>
-
-                        <div className="mdc-card__action-icons">
-                            {/* <i class="material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="Share">share</i> */}
-                        </div>
-                    </div>
-                </div>
+                        </Button>
+                        <Button size="small" color="primary">
+                            <i className="material-icons">favorite_border</i> 
+                        </Button>
+                    </CardActions>
+                </Card>
             );
         }))
 

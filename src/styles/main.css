@@ -1,5 +1,6 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: gray;
 }
 
 .instructions h1 {
@@ -47,11 +48,11 @@ input[type="submit"] {
 .message:nth-child(even) {
     background-color: #f8f8f8;
 }
-/* 
-.mdc-card {
+
+.cardMedia {
     height: 200px;
     width: 200px;
-  } */
+  }
 
 .navbar {
   background-color: #546a67;
