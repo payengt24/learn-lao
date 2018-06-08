@@ -84,7 +84,7 @@ class RegisterPage extends Component {
             <span className="heading-primary-sub-register">Learn Lao</span>
           </h1>
           {this.renderAlert()}
-          <form onSubmit={this.registerUser}>
+          <form onSubmit={this.registerUser} className="form">
             <h1>Register User</h1>
             <div>
               <label htmlFor="username">

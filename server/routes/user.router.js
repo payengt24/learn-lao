@@ -19,6 +19,11 @@ const router = express.Router();
 // {favorites: {$addToSet}}
 // $pull 
 
+// Person.findByIdAndUpdate('1231231', {$addToSet: {favorites: {id: 1}}}, {new: true})
+// .then(function (user) {
+//   // user new updated user
+// });
+
 // Handles Ajax request for user information if user is authenticated
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from database
@@ -36,6 +41,26 @@ router.post('/register', (req, res, next) => {
   newPerson.save()
     .then(() => { res.sendStatus(201); })
     .catch((err) => { next(err); });
+});
+
+router.post('/addfavorite', (req, res, next) => {
+  console.log('favorite data body',req.body);
+  const username = req.body.userName.username;
+
+  Person.updateOne({username}, {$addToSet: {favorites: req.body.favorite}})
+  .then(() => {
+    // user new updated user
+    res.sendStatus(200);
+  })
+  .catch(error => {
+    console.log(error);
+    res.sendStatus(500);
+  })
+
+
+  // newPerson.save()
+  //   .then(() => { res.sendStatus(201); })
+  //   .catch((err) => { next(err); });
 });
 
 // Handles login form authenticate/login POST

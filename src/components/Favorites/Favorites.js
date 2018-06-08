@@ -10,7 +10,36 @@ const mapStateToProps = state => ({
 class Favorites extends Component {
     constructor(props) {
         super(props);
+        this.state = ({
+            comment: '',
+        })
     }
+
+    handleChangeFor = propertyName => event => {
+        console.log('change', event.target.value)
+        this.setState({
+            comment: {
+                ...this.state.comment,
+                [propertyName]: event.target.value
+            }
+        })
+    }
+
+    handleSave = (event) => {
+        this.props.dispatch({ type: 'POST_FAVORITE', payload: this.state})
+        this.setState ({
+            comment: '',
+        })
+    }
+
+    handleDelete = (id) => {
+        const action = {
+          type: 'DELETE_FAVORITE',
+          payload: id,
+        }
+        this.props.dispatch(action);
+      }
+
 
     render() {
         return (
@@ -45,13 +74,13 @@ class Favorites extends Component {
                         <div className="mdc-card__media-content">Title</div>
                     </div>
                     <div>
-                        <input placeholder="Comments" />
+                        <input placeholder="Comments" onClick={this.handleChangeFor('comment')} />
                     </div>
                     <div className="mdc-card__actions">
                         <div className="mdc-card__action-buttons">
                             <button className="mdc-button mdc-card__action mdc-card__action--button">Edit</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Delete</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Save</button>
+                            <button className="mdc-button mdc-card__action mdc-card__action--button" onClick={this.handleDelete}>Delete</button>
+                            <button className="mdc-button mdc-card__action mdc-card__action--button" onClick={this.handleSave}>Save</button>
                             <button className="mdc-button mdc-card__action mdc-card__action--button">Cancel</button>
                         </div>
                     </div>

@@ -1,8 +1,8 @@
 export const FAVORITE_ACTIONS = {
     GET: 'GET_FAVORITE',
-    ADD: 'SET_FAVORITE',
+    ADD: 'POST_FAVORITE',
     DELETE: 'DELETE_FAVORITE',
-    SET: 'SET_FAVORITE',
+    SET: 'UPDATE_FAVORITE',
   };
   
   

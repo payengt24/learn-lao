@@ -207,7 +207,10 @@ bottom:   0;
 
 
 
-
+.form {
+    opacity: .75;
+    border: 2px solid #000;
+}
 
 
 

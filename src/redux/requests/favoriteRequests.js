@@ -10,3 +10,19 @@ export function getFavorite() {
         .then(response => response.data)
         .catch((error) => { throw error; });
 }
+
+
+export function addFavoriteToDatabase(action) {
+
+  console.log('constructing data',action);
+  const data = {
+      favorite: action.payload,
+      userName: action.userName,
+  };
+  console.log('sending data',data);
+
+  
+    return axios.post('api/user/addfavorite', data)
+      .then(response => response.data)
+      .catch((error) => { throw error; });
+}

@@ -4,6 +4,7 @@ import loginSaga from './loginSaga';
 import consonantSaga from './consonantSaga';
 import vowelSaga from './vowelSaga';
 import vocabularySaga from './vocabularySaga';
+import favoriteSaga from './favoriteSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -12,6 +13,8 @@ export default function* rootSaga() {
     consonantSaga(),
     vowelSaga(),
     vocabularySaga(),
+    favoriteSaga(),
+
     // watchIncrementAsync()
   ]);
 }

@@ -25,9 +25,13 @@ const isLoading = (state = false, action) => {
 };
 
 const favorites = (state = [], action) => {
+  
   switch (action.type) {
     case USER_ACTIONS.SET_FAVORITES:
       return action.user.favorites;
+    case USER_ACTIONS.ADD_FAVORITE:
+      console.log('new favorite list',[...state, action.payload ]);
+      return [...state, action.payload ] 
     default:
       return state;
   }
