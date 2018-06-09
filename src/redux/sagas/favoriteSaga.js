@@ -38,7 +38,12 @@ function* deleteFavorite(action) {
     console.log('deleting favoite in saga', action)
     try {
         yield deleteFavoriteDatabase(action.payload);
-        
+        const user = yield getFavorite();
+        console.log('getting update user:',user);
+        yield put({
+            type: USER_ACTIONS.SET_FAVORITES,
+            user
+        });
     } catch (error) {
         console.log(error)
     }

@@ -22,10 +22,9 @@ class FavoriteObject extends Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        //     edit: false,
-        //     comment: this.props.favorite.comment,
-        // };
+        this.state = {
+            comment: '',
+        };
 
         this.playAudio = () => { this.sound.play };
     }
@@ -37,6 +36,7 @@ class FavoriteObject extends Component {
     }
 
     handleChangeFor = (property) => (event) => {
+        console.log(event.target.value)
         this.setState({
             [property]: event.target.value
         })
@@ -55,9 +55,9 @@ class FavoriteObject extends Component {
         this.props.dispatch(action);
     }
 
-    handleSave = (id) => {
-
-    }
+    // handleSaveComment = () => {
+    //     // this.props.dispatch({ type: FAVORITE_ACTIONS.ADD, payload: this.state})
+    // }
 
     handleCancel = () => {
         this.setState({
@@ -76,9 +76,23 @@ class FavoriteObject extends Component {
                 image={(this.props.path + this.props.cardObject.img_path)}
                 title="title"
             />
-            <CardActions>
 
+            <input placeholder="Comments" value={this.state.comment} onChange={this.handleChangeFor('comment')} />
+
+            <CardActions>
                 <div onClick={this.handleDelete}>
+                    <Button size="small" color="primary" className="button save" onClick={this.handleSaveComment}>
+                        <i className="material-icons">save</i>
+                        <p>Save</p>
+                    </Button>
+                    <Button size="small" color="primary" className="button edit">
+                        <i className="material-icons">edit</i>
+                        <p>Edit</p>
+                    </Button>
+                    <Button size="small" color="primary" className="button cancel">
+                        <i className="material-icons">cancel</i>
+                        <p>Cancel</p>
+                    </Button>
                     <Button size="small" color="primary" className="button delete">
                         <i className="material-icons" >delete</i>
                         <p>Delete</p>

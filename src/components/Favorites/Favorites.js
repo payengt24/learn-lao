@@ -43,14 +43,6 @@ class Favorites extends Component {
         })
     }
 
-    handleDelete = (id) => {
-        const action = {
-          type: 'DELETE_FAVORITE',
-          payload: id,
-        }
-        this.props.dispatch(action);
-      }
-
 
     render() {
 
