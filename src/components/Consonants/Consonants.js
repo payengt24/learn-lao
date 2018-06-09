@@ -4,10 +4,13 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { getConsonant } from '../../redux/actions/consonantActions'
 import CardObject from '../CardObject/CardObject'
+import { USER_ACTIONS } from '../../redux/actions/userActions'
 
 
-const mapReduxStateToProps = (reduxState) => (
-    { reduxState }
+const mapReduxStateToProps = (reduxState) => ({ 
+    reduxState,
+    user: reduxState.user,
+    }
 );
 
 class Consonants extends Component {
@@ -15,10 +18,20 @@ class Consonants extends Component {
         super(props);
 
     }
-
+  
     componentDidMount() {
+      this.props.dispatch({
+        type: USER_ACTIONS.FETCH_USER
+      });
         this.props.dispatch(getConsonant());
     }
+
+    componentDidUpdate() {
+      if (!this.props.user.isLoading && this.props.user.userName === null) {
+        this.props.history.push('home');
+      }
+    }
+
 
     
 

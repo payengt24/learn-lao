@@ -3,10 +3,12 @@ import Nav from '../../components/Nav/Nav';
 import { connect } from 'react-redux';
 import { getVocabulary } from '../../redux/actions/vocabularyActions'
 import CardObject from '../CardObject/CardObject'
+import { USER_ACTIONS } from '../../redux/actions/userActions'
 
-const mapReduxStateToProps = (reduxState) => (
-    { reduxState }
-);
+const mapReduxStateToProps = (reduxState) => ({
+    reduxState,
+    user: reduxState.user,
+});
 
 class Vocabulary extends Component {
     constructor(props) {
@@ -14,10 +16,17 @@ class Vocabulary extends Component {
     }
 
     componentDidMount() {
+        this.props.dispatch({
+            type: USER_ACTIONS.FETCH_USER
+          });
         this.props.dispatch(getVocabulary());
     }
 
-    
+    componentDidUpdate() {
+        if (!this.props.user.isLoading && this.props.user.userName === null) {
+          this.props.history.push('home');
+        }
+      }
 
     render() {
         console.log('this.state vocab', this.state)

@@ -3,10 +3,13 @@ import Nav from '../../components/Nav/Nav';
 import { connect } from 'react-redux';
 import { getVowel } from '../../redux/actions/vowelActions'
 import CardObject from '../CardObject/CardObject'
+import { USER_ACTIONS } from '../../redux/actions/userActions'
 
 
-const mapReduxStateToProps = (reduxState) => (
-    { reduxState }
+const mapReduxStateToProps = (reduxState) => ({
+    reduxState,
+    user: reduxState.user,
+}
 );
 
 
@@ -19,10 +22,17 @@ class Vowels extends Component {
     }
 
     componentDidMount() {
+        this.props.dispatch({
+            type: USER_ACTIONS.FETCH_USER
+        });
         this.props.dispatch(getVowel());
     }
 
-    
+    componentDidUpdate() {
+        if (!this.props.user.isLoading && this.props.user.userName === null) {
+          this.props.history.push('home');
+        }
+      }
 
     render() {
         console.log('this.state vowel', this.state)
@@ -33,7 +43,7 @@ class Vowels extends Component {
             console.log('img path:', ('data/images/vowels/' + vowel.img_path));
             return (
 
-                <CardObject cardObject={vowel} key={vowel._id} path={'data/images/vowels/'} type={'vowel'}/>
+                <CardObject cardObject={vowel} key={vowel._id} path={'data/images/vowels/'} type={'vowel'} />
             );
         }))
 

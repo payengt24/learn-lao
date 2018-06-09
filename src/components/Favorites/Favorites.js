@@ -2,15 +2,23 @@ import React, { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import { connect } from 'react-redux';
 import FavoriteObject from '../Favorites/FavoriteObject'
+import { USER_ACTIONS } from '../../redux/actions/userActions'
 
 
-const mapStateToProps = state => ({
-    user: state.user,
-});
+const mapReduxStateToProps = (reduxState) => ({ 
+    reduxState,
+    user: reduxState.user,
+    }
+);
 
 class Favorites extends Component {
 
-
+  
+    componentDidMount() {
+        this.props.dispatch({
+          type: USER_ACTIONS.FETCH_USER
+        });
+    }
 
     componentDidUpdate() {
         if (!this.props.user.isLoading && this.props.user.userName === null) {
@@ -96,4 +104,4 @@ class Favorites extends Component {
     }
 };
 
-export default connect(mapStateToProps)(Favorites);
+export default connect(mapReduxStateToProps)(Favorites);
