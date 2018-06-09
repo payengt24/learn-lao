@@ -4,13 +4,17 @@ const Consonant = require('../models/Consonant');
 
 
 router.get('/', (req, res) => {
-    console.log('GET /api/consonant');
-    Consonant.find({}).then((result) => {
-        res.send(result);
-    }).catch((error) => {
-        console.log('Error GET /api/consonant', error)
-        res.sendStatus(500);
-    });
+    if (req.isAuthenticated()) {
+        console.log('GET /api/consonant');
+        Consonant.find({}).then((result) => {
+            res.send(result);
+        }).catch((error) => {
+            console.log('Error GET /api/consonant', error)
+            res.sendStatus(500);
+        });
+    } else {
+        res.sendStatus(403);
+    }
 })
 
 

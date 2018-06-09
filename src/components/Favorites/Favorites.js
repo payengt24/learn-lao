@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import { connect } from 'react-redux';
+import FavoriteObject from '../Favorites/FavoriteObject'
 
 
 const mapStateToProps = state => ({
@@ -8,6 +9,16 @@ const mapStateToProps = state => ({
 });
 
 class Favorites extends Component {
+
+
+
+    componentDidUpdate() {
+        if (!this.props.user.isLoading && this.props.user.userName === null) {
+          this.props.history.push('home');
+        }
+      }
+
+      
     constructor(props) {
         super(props);
         this.state = ({
@@ -42,6 +53,24 @@ class Favorites extends Component {
 
 
     render() {
+
+        console.log('this.state   sdfs favorite', this)
+        console.log('sadsdredux favorite', this.props.user.favorites)
+
+        let path = ''
+        let favoriteDisplay = this.props.user.favorites.map(((favorite) => {
+            if (favorite.type === 'consonant') {
+                path = 'data/images/consonants/'
+           }else if (favorite.type === 'vowel') {
+               path = 'data/images/vowels/'
+           }else {
+               path = 'data/images/vocabulary/'
+           }
+            return (
+                <FavoriteObject cardObject={favorite} path = {path} key={favorite._id}/>
+            );
+        }))
+        
         return (
             <div>
                 <header>
@@ -62,70 +91,12 @@ class Favorites extends Component {
                         </div>
                     </div>
                 </header>
-                <Nav />
+                <Nav isLogin="true" />
 
                 <h1 id="welcome">Welcome, {this.props.user.userName}!</h1>
                 <h2>Favorites</h2>
 
-                <h4>Consonants</h4>
-
-                <div className="mdc-card">
-                    <div className="mdc-card__media mdc-card__media--square">
-                        <div className="mdc-card__media-content">Title</div>
-                    </div>
-                    <div>
-                        <input placeholder="Comments" onClick={this.handleChangeFor('comment')} />
-                    </div>
-                    <div className="mdc-card__actions">
-                        <div className="mdc-card__action-buttons">
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Edit</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button" onClick={this.handleDelete}>Delete</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button" onClick={this.handleSave}>Save</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <br />
-                <br />
-                <h4>Vowels</h4>
-                <div className="mdc-card">
-                    <div className="mdc-card__media mdc-card__media--square">
-                        <div className="mdc-card__media-content">Title</div>
-                    </div>
-                    <div>
-                        <input placeholder="Comments" />
-                    </div>
-                    <div className="mdc-card__actions">
-                        <div className="mdc-card__action-buttons">
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Edit</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Delete</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Save</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <br />
-                <br />
-                <h4>Vocabulary</h4>
-                <div className="mdc-card">
-                    <div className="mdc-card__media mdc-card__media--square">
-                        <div className="mdc-card__media-content">Title</div>
-                    </div>
-                    <div>
-                        <input placeholder="Comments" />
-                    </div>
-                    <div className="mdc-card__actions">
-                        <div className="mdc-card__action-buttons">
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Edit</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Delete</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Save</button>
-                            <button className="mdc-button mdc-card__action mdc-card__action--button">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-
+                {favoriteDisplay}
 
             </div>
         );

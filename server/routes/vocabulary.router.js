@@ -8,6 +8,7 @@ Vocabulary.find()
 });
 
 router.get('/', (req, res) => {
+    if (req.isAuthenticated()) {
     console.log('GET /api/vocabulary');
     // console.log(Vocabulary);
     Vocabulary.find({}).then((result) => {
@@ -17,6 +18,9 @@ router.get('/', (req, res) => {
         console.log('Error GET /api/vocabulary', error)
         res.sendStatus(500);
     });
+} else {
+    res.sendStatus(403);
+}
 })
 
 

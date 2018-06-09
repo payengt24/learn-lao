@@ -70,7 +70,7 @@ class UserPage extends Component {
 
           <div>
 
-            <div class="topnav">
+            <div className="topnav">
               <div className="homePageBoarder">
                 <h2><Link to="/user" className="link">Home</Link></h2>
               </div>

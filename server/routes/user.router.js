@@ -43,7 +43,8 @@ router.post('/register', (req, res, next) => {
     .catch((err) => { next(err); });
 });
 
-router.post('/addfavorite', (req, res, next) => {
+router.post('/addFavorite', (req, res, next) => {
+  if (req.isAuthenticated()) {
   console.log('favorite data body',req.body);
   const username = req.body.userName.username;
 
@@ -56,12 +57,34 @@ router.post('/addfavorite', (req, res, next) => {
     console.log(error);
     res.sendStatus(500);
   })
-
-
   // newPerson.save()
   //   .then(() => { res.sendStatus(201); })
   //   .catch((err) => { next(err); });
+}else {
+  res.sendStatus(403);
+}
 });
+
+router.delete('/deleteFavorite', (req, res, next) => {
+  if (req.isAuthenticated()) {
+  console.log('------------------deleting favorite----------------');
+  console.log('param',req.query.favorite);
+  console.log('user',req.user);
+  const username = req.user.username;
+
+  Person.updateOne({username}, {$pull: {favorites: {_id: req.query.favorite}}})
+  .then(() => {
+    // user new updated user
+    res.sendStatus(200);
+  })
+  .catch(error => {
+    console.log(error);
+    res.sendStatus(500);
+  })
+}else {
+  res.sendStatus(403);
+}
+})
 
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
@@ -76,6 +99,7 @@ router.get('/logout', (req, res) => {
   // Use passport's built-in method to log out the user
   req.logout();
   res.sendStatus(200);
+  
 });
 
 module.exports = router;

@@ -24,9 +24,10 @@ class CardObject extends Component {
     }
 
     handleFavorite = () => {
+
         const data = {
             id: this.props.cardObject._id,
-            type: 'consonant',
+            type: this.props.type,
             img_path: this.props.cardObject.img_path,
             mp3_path: this.props.cardObject.mp3_path,
             comments: ''
@@ -50,12 +51,16 @@ class CardObject extends Component {
                 title="title"
             />
             <CardActions>
-                <Button size="small" color="primary">
+                {/* <Button size="small" color="primary">
                     <i className="material-icons">favorite</i>
+                </Button> */}
+            
+                <div onClick={this.handleFavorite}>
+                <Button size="small" color="primary" className="button favorite_border">
+                    <i className="material-icons" >favorite_border</i>
+                    <p>Favorite</p>
                 </Button>
-                <Button size="small" color="primary">
-                    <i className="material-icons" onClick={this.handleFavorite}>favorite_border</i>
-                </Button>
+                </div>
             </CardActions>
         </Card>
 
@@ -63,6 +68,7 @@ class CardObject extends Component {
 
             <div>
                 {card}
+
             </div>
         );
 

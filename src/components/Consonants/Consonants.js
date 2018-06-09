@@ -20,6 +20,8 @@ class Consonants extends Component {
         this.props.dispatch(getConsonant());
     }
 
+    
+
     render() {
         console.log('this.state', this.state)
         console.log('sadsdredux', this.props.reduxState.consonant)
@@ -27,9 +29,7 @@ class Consonants extends Component {
         let consonantDisplay = this.props.reduxState.consonant.consonant.map(((consonant) => {
             console.log('img path:', ('data/images/consonants/' + consonant.img_path));
             return (
-                
-                <CardObject cardObject={consonant} key={consonant._id} path={'data/images/consonants/'}/>
-
+                <CardObject cardObject={consonant} key={consonant._id} path={'data/images/consonants/'} type={'consonant'} />
             );
         }))
 
@@ -53,7 +53,7 @@ class Consonants extends Component {
                         </div>
                     </div>
                 </header>
-                <Nav />
+                <Nav isLogin="true" />
                 {/* <h2>Consonants</h2> */}
 
                 {consonantDisplay}
