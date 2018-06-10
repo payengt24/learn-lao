@@ -42,7 +42,7 @@ class FavoriteObject extends Component {
         this.cancel = {
             display: 'none',
         };
-        this.playAudio = () => { this.sound.play };
+        this.playAudio = () => { this.sound.play() };
     }
 
 
@@ -160,11 +160,11 @@ class FavoriteObject extends Component {
 
 
     render() {
-        let audio = 
-        <audio ref={(sound) => { this.sound = sound; }}>
-            <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
-            </source>
-        </audio>
+        let audio =
+            <audio ref={(sound) => { this.sound = sound; }}>
+                <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+                </source>
+            </audio>
 
         let card = <Card key={this.props.cardObject._id} className='card'>
             <CardMedia onClick={this.playAudio}
