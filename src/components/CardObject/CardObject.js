@@ -33,7 +33,7 @@ class CardObject extends Component {
         this.removeFavorite = {
             display: this.state.displayUnsave,
         };
-
+        this.playAudio = () => { this.sound.play() };
     }
 
     handleFavorite = () => {
@@ -80,11 +80,16 @@ class CardObject extends Component {
 
 
     render() {
+        let audio =
+        <audio ref={(sound) => { this.sound = sound; }}>
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+            </source>
+        </audio>
         // console.log('cardDisplay', this.props.path + this.props.cardObject.img_path);
         console.log('this------card', this);
 
         let card = <Card key={this.props.cardObject._id} className='card'>
-            <CardMedia
+            <CardMedia onClick={this.playAudio}
                 className='cardMedia'
                 image={(this.props.path + this.props.cardObject.img_path)}
                 title="title"
@@ -113,7 +118,7 @@ class CardObject extends Component {
 
             <div>
                 {card}
-
+                {audio}
             </div>
         );
 
