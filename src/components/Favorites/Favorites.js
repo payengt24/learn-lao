@@ -29,27 +29,9 @@ class Favorites extends Component {
       
     constructor(props) {
         super(props);
-        this.state = ({
-            comment: '',
-        })
     }
 
-    handleChangeFor = propertyName => event => {
-        console.log('change', event.target.value)
-        this.setState({
-            comment: {
-                ...this.state.comment,
-                [propertyName]: event.target.value
-            }
-        })
-    }
 
-    handleSave = (event) => {
-        this.props.dispatch({ type: 'POST_FAVORITE', payload: this.state})
-        this.setState ({
-            comment: '',
-        })
-    }
 
 
     render() {

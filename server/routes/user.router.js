@@ -57,9 +57,7 @@ router.post('/addFavorite', (req, res, next) => {
     console.log(error);
     res.sendStatus(500);
   })
-  // newPerson.save()
-  //   .then(() => { res.sendStatus(201); })
-  //   .catch((err) => { next(err); });
+
 }else {
   res.sendStatus(403);
 }

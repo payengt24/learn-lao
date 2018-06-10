@@ -14,9 +14,11 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-const mapStateToProps = state => ({
-    user: state.user,
-});
+const mapReduxStateToProps = (reduxState) => ({ 
+    reduxState,
+    user: reduxState.user,
+    }
+);
 
 class FavoriteObject extends Component {
 
@@ -93,7 +95,8 @@ class FavoriteObject extends Component {
                 title="title"
             />
 
-            <input placeholder="Comments" value={this.state.comment} onChange={this.handleChangeFor('comment')} />
+
+            <input placeholder="Comments" value={this.props.cardObject.comment} onChange={this.handleChangeFor('comment')} />
 
             <CardActions>
                 <div>
@@ -150,4 +153,4 @@ class FavoriteObject extends Component {
 
 }
 
-export default connect(mapStateToProps)(FavoriteObject);
+export default connect(mapReduxStateToProps)(FavoriteObject);
