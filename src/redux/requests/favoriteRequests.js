@@ -41,3 +41,12 @@ console.log(action);
       .then(response => response.data)
       .catch((error) => { throw error; });
 }
+
+export function updateFavoriteComment(action) {
+  console.log('------update favoirt in request---------');
+console.log('lol]]]------------', action);
+  
+    return axios.put(`api/user/updateComment`, {id: action.id, comment: action.comment})
+      .then(response => response.data)
+      .catch((error) => { throw error; });
+}

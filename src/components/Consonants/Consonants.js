@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getConsonant } from '../../redux/actions/consonantActions'
 import CardObject from '../CardObject/CardObject'
 import { USER_ACTIONS } from '../../redux/actions/userActions'
-
+import { LOGIN_ACTIONS } from '../../redux/actions/loginActions';
 
 const mapReduxStateToProps = (reduxState) => ({ 
     reduxState,
@@ -32,7 +32,12 @@ class Consonants extends Component {
       }
     }
 
-
+    logout = () => {
+        this.props.dispatch({
+          type: LOGIN_ACTIONS.LOGOUT
+        });
+        this.props.history.push('home');
+      }
     
 
     render() {
@@ -66,7 +71,7 @@ class Consonants extends Component {
                         </div>
                     </div>
                 </header>
-                <Nav isLogin="true" />
+                <Nav isLogin="true" onClick={this.logout}/>
                 {/* <h2>Consonants</h2> */}
 
                 {consonantDisplay}

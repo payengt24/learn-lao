@@ -65,6 +65,38 @@ router.post('/addFavorite', (req, res, next) => {
 }
 });
 
+router.put('/updateComment', (req, res) => {
+  if (req.isAuthenticated()) {
+    console.log('updated-----------', req.body.id)
+  Person.findById(req.user._id)
+  .then((user) => {
+    console.log(user);
+    // user.favorites
+    // update the comment in favorites
+    user.favorites.forEach(function (value, index) {
+      console.log(value);
+      if (value._id.toString() === req.body.id) {
+        value.comment = req.body.comment;
+      }
+    });
+    
+    return user.save();
+  })
+  .then(() => {
+    // user new updated user
+    res.sendStatus(200);
+  })
+  .catch(error => {
+    console.log(error);
+    res.sendStatus(500);
+  })
+
+}else {
+  res.sendStatus(403);
+}
+});
+
+
 router.delete('/deleteFavorite', (req, res, next) => {
   if (req.isAuthenticated()) {
   console.log('------------------deleting favorite----------------');

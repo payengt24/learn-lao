@@ -23,17 +23,14 @@ class FavoriteObject extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            edit: true,
             comment: '',
         };
 
         this.playAudio = () => { this.sound.play };
     }
 
-    handleEditClick = () => {
-        this.setState({
-            edit: true,
-        })
-    }
+
 
     handleChangeFor = (property) => (event) => {
         console.log(event.target.value)
@@ -55,16 +52,35 @@ class FavoriteObject extends Component {
         this.props.dispatch(action);
     }
 
-    // handleSaveComment = () => {
-    //     // this.props.dispatch({ type: FAVORITE_ACTIONS.ADD, payload: this.state})
-    // }
+    handleSaveComment = () => {
+        const data = {
+            id: this.props.cardObject._id,
+            type: this.props.cardObject.type,
+            img_path: this.props.cardObject.img_path,
+            mp3_path: this.props.cardObject.mp3_path,
+            comment: this.state.comment,
+        }
+        // console.log('1------payload: this.state', this.props.cardObject._id)
+        // this.props.dispatch({ type: FAVORITE_ACTIONS.SET, payload: this.props.cardObject._id})
+       console.log('-------------data=====', data) 
+        this.props.dispatch({ type: FAVORITE_ACTIONS.SET, payload: data})
 
-    handleCancel = () => {
+    }
+
+    handleCancelButton = () => {
         this.setState({
-            edit: false,
+            cancel: !this.state.cancel,
+        })
+    }
+
+    handleEditComment = () => {
+        this.setState({
+            edit: !this.state.edit,
             comment: this.props.favorite.comment,
         })
     }
+
+
 
 
 
@@ -80,20 +96,20 @@ class FavoriteObject extends Component {
             <input placeholder="Comments" value={this.state.comment} onChange={this.handleChangeFor('comment')} />
 
             <CardActions>
-                <div onClick={this.handleDelete}>
+                <div>
                     <Button size="small" color="primary" className="button save" onClick={this.handleSaveComment}>
                         <i className="material-icons">save</i>
                         <p>Save</p>
                     </Button>
-                    <Button size="small" color="primary" className="button edit">
+                    <Button size="small" color="primary" className="button edit" onClick={this.handleEditComment}>
                         <i className="material-icons">edit</i>
                         <p>Edit</p>
                     </Button>
-                    <Button size="small" color="primary" className="button cancel">
+                    <Button size="small" color="primary" className="button cancel" onClick={this.handleCancelButton}>
                         <i className="material-icons">cancel</i>
                         <p>Cancel</p>
                     </Button>
-                    <Button size="small" color="primary" className="button delete">
+                    <Button size="small" color="primary" className="button delete" onClick={this.handleDelete}>
                         <i className="material-icons" >delete</i>
                         <p>Delete</p>
                     </Button>

@@ -21,9 +21,16 @@ const mapReduxStateToProps = (reduxState) => (
 class CardObject extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            flipHeart: false,
+        }
     }
 
     handleFavorite = () => {
+        this.flipHeart = !this.flipHeart;
+        this.setState({
+            flipHeart: !this.state.flipHeart
+        })
 
         const data = {
             id: this.props.cardObject._id,
@@ -39,6 +46,7 @@ class CardObject extends Component {
         this.props.dispatch({ type: FAVORITE_ACTIONS.ADD, payload: data, userName })
     }
 
+
     render() {
         console.log('cardDisplay', this.props.path + this.props.cardObject.img_path);
         console.log('this', this);
@@ -51,16 +59,23 @@ class CardObject extends Component {
                 title="title"
             />
             <CardActions>
-                {/* <Button size="small" color="primary">
-                    <i className="material-icons">favorite</i>
-                </Button> */}
-            
                 <div onClick={this.handleFavorite}>
-                <Button size="small" color="primary" className="button favorite_border">
-                    <i className="material-icons" >favorite_border</i>
+                    <Button size="small" color="primary" className="button favorite_border">
+                        <i className="material-icons" >favorite_border</i>
+                        <p>Favorite</p>
+                    </Button>
+                </div>
+
+                <Button size="small" color="primary">
+                    <i className="material-icons">favorite</i>
                     <p>Favorite</p>
                 </Button>
-                </div>
+
+
+            </CardActions>
+
+            <CardActions>
+
             </CardActions>
         </Card>
 
