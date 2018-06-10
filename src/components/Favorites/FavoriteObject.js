@@ -169,7 +169,7 @@ class FavoriteObject extends Component {
             <input placeholder="Comments" value={this.state.comment} onChange={this.handleChangeFor('comment')} />
 
             <CardActions>
-                <div>
+           
                     <Button style={this.save} size="small" color="primary" className="button save" onClick={this.handleSaveComment}>
                         <i className="material-icons">save</i>
                         <p>Save</p>
@@ -186,7 +186,7 @@ class FavoriteObject extends Component {
                         <i className="material-icons" >delete</i>
                         <p>Delete</p>
                     </Button>
-                </div>
+
             </CardActions>
 
 
