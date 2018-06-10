@@ -16,9 +16,11 @@ const mapReduxStateToProps = (reduxState) => ({
 
 
 class Vowels extends Component {
-
     constructor(props) {
         super(props);
+        this.state = {
+            favoriteVowel: [],
+        }
     }
 
     componentDidMount() {
@@ -34,6 +36,26 @@ class Vowels extends Component {
         }
       }
 
+
+      isFavorite = (value) => {
+        //   console.log('11111');
+        //   console.log(this.props.reduxState.user.favorites)
+          let found = this.props.reduxState.user.favorites.filter((element) => {
+              console.log(111);
+              console.log(element);
+              if (element.type === 'vowel' && element.object_id === value._id) {
+                return true;
+              } else {
+                  return false;
+              }
+          });
+    
+          if(found.length > 0){
+            return ['none', 'block'];
+          }
+          return ['block', 'none'];
+      } 
+
     render() {
         console.log('this.state vowel', this.state)
         // console.log('this', this)
@@ -43,7 +65,7 @@ class Vowels extends Component {
             console.log('img path:', ('data/images/vowels/' + vowel.img_path));
             return (
 
-                <CardObject cardObject={vowel} key={vowel._id} path={'data/images/vowels/'} type={'vowel'} />
+                <CardObject buttonDisplay={this.isFavorite(vowel)} cardObject={vowel} key={vowel._id} path={'data/images/vowels/'} type={'vowel'} />
             );
         }))
 

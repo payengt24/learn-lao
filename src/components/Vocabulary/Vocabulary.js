@@ -13,6 +13,10 @@ const mapReduxStateToProps = (reduxState) => ({
 class Vocabulary extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            favoriteVocabulary: [],
+        }
+
     }
 
     componentDidMount() {
@@ -28,6 +32,21 @@ class Vocabulary extends Component {
         }
       }
 
+    isFavorite = (value) => {
+          let found = this.props.reduxState.user.favorites.filter((element) => {
+              if (element.type === 'vocabulary' && element.object_id === value._id) {
+                return true;
+              } else {
+                  return false;
+              }
+          });
+    
+          if(found.length > 0){
+            return ['none', 'block'];
+          }
+          return ['block', 'none'];
+      } 
+
     render() {
         console.log('this.state vocab', this.state)
         console.log('redux vocab', this.props.reduxState.vocabulary)
@@ -36,7 +55,7 @@ class Vocabulary extends Component {
             console.log('img path:', ('data/images/vocabulary/' + vocabulary.img_path));
             return (
 
-                <CardObject cardObject={vocabulary} key={vocabulary._id} path={'data/images/vocabulary/'} type={'vocabulary'}/>
+                <CardObject buttonDisplay={this.isFavorite(vocabulary)} cardObject={vocabulary} key={vocabulary._id} path={'data/images/vocabulary/'} type={'vocabulary'}/>
             );
         }))
 

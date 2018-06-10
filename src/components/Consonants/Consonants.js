@@ -36,18 +36,6 @@ class Consonants extends Component {
       }
     }
 
-      filterFavoriteList = () => {
-          console.log('**********checking favorite',this.props.reduxState.user.favorites);
-          this.props.reduxState.user.favorites.forEach((element, index) =>{
-              console.log('favorite element:', element);
-                if(element.type == 'consonant'){
-                    this.setState({
-                        favoriteConsonant: [...this.state.favoriteConsonant, element] 
-                    })
-                }
-          })
-          console.log('---------this.state.favoriteConsonant', this.state.favoriteConsonant)
-      }
 
     logout = () => {
         this.props.dispatch({
