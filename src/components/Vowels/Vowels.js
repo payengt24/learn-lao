@@ -12,9 +12,6 @@ const mapReduxStateToProps = (reduxState) => ({
 }
 );
 
-
-
-
 class Vowels extends Component {
     constructor(props) {
         super(props);
@@ -38,8 +35,6 @@ class Vowels extends Component {
 
 
       isFavorite = (value) => {
-        //   console.log('11111');
-        //   console.log(this.props.reduxState.user.favorites)
           let found = this.props.reduxState.user.favorites.filter((element) => {
               console.log(111);
               console.log(element);

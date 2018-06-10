@@ -64,10 +64,7 @@ class Consonants extends Component {
       } 
 
 
-    render() {
-        // console.log('this.state', this.state)
-        // console.log('-----sadsdddredux-----', this.props.reduxState)
-        
+    render() {        
         let consonantDisplay = this.props.reduxState.consonant.consonant.map(((consonant) => {
             // console.log('img path:', ('data/images/consonants/' + consonant.img_path));
             return (

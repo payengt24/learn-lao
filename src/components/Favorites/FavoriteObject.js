@@ -28,8 +28,7 @@ class FavoriteObject extends Component {
             edit: false,
             delete: false,
             // save: 'display: none;',
-            comment: this.props.cardObject.comment,
-            commentChange: 'Comment',
+            commentEdit: false,
         };
         this.edit = {
             display: 'block',
@@ -110,11 +109,11 @@ class FavoriteObject extends Component {
     handleCancelButton = () => {
         this.handleEditComment();
         let value = this.state.comment;
-        if(value) {
+        if (value) {
             this.setState({
-            comment: null,
-        });
-    }
+                comment: null,
+            });
+        }
     }
 
     handleEditComment = () => {
@@ -161,35 +160,40 @@ class FavoriteObject extends Component {
 
 
     render() {
+        let audio = 
+        <audio ref={(sound) => { this.sound = sound; }}>
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+            </source>
+        </audio>
 
         let card = <Card key={this.props.cardObject._id} className='card'>
-            <CardMedia
+            <CardMedia onClick={this.playAudio}
                 className='cardMedia'
                 image={(this.props.path + this.props.cardObject.img_path)}
                 title="title"
             />
 
 
-            <input placeholder="Comments" value={this.state.comment} onChange={this.handleChangeFor('comment')} />
+            <input disabled={(!this.state.edit) ? "disabled" : ""} placeholder="Comments" value={this.state.comment} onChange={this.handleChangeFor('comment')} />
 
             <CardActions>
-           
-                    <Button style={this.save} size="small" color="primary" className="button save" onClick={this.handleSaveComment}>
-                        <i className="material-icons">save</i>
-                        <p>Save</p>
-                    </Button>
-                    <Button style={this.edit} size="small" color="primary" className="button edit" onClick={this.handleEditComment}>
-                        <i className="material-icons">edit</i>
-                        <p>Edit</p>
-                    </Button>
-                    <Button style={this.cancel} size="small" color="primary" className="button cancel" onClick={this.handleCancelButton}>
-                        <i className="material-icons">cancel</i>
-                        <p>Cancel</p>
-                    </Button>
-                    <Button style={this.delete} size="small" color="primary" className="button delete" onClick={this.handleDelete}>
-                        <i className="material-icons" >delete</i>
-                        <p>Delete</p>
-                    </Button>
+
+                <Button style={this.save} size="small" color="primary" className="button save" onClick={this.handleSaveComment}>
+                    <i className="material-icons">save</i>
+                    <p>Save</p>
+                </Button>
+                <Button style={this.edit} size="small" color="primary" className="button edit" onClick={this.handleEditComment}>
+                    <i className="material-icons">edit</i>
+                    <p>Edit Comment</p>
+                </Button>
+                <Button style={this.cancel} size="small" color="primary" className="button cancel" onClick={this.handleCancelButton}>
+                    <i className="material-icons">cancel</i>
+                    <p>Cancel</p>
+                </Button>
+                <Button style={this.delete} size="small" color="primary" className="button delete" onClick={this.handleDelete}>
+                    <i className="material-icons" >delete</i>
+                    <p>Delete</p>
+                </Button>
 
             </CardActions>
 
@@ -199,13 +203,8 @@ class FavoriteObject extends Component {
         return (
             <div className="mdc-card">
 
-                {/* <audio ref={(sound) => { this.sound = sound; }}>
-                    <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
-                    </source>
-		        </audio> */}
-
-
                 {card}
+                {audio}
 
             </div>
         )
