@@ -71,13 +71,12 @@ router.put('/updateComment', (req, res) => {
     console.log(user);
     // user.favorites
     // update the comment in favorites
-    user.favorites.forEach(function (value, index) {
-      console.log(value);
-      if (value._id.toString() === req.body.id) {
-        value.comment = req.body.comment;
+    user.favorites.forEach(function (favorite, index) {
+      console.log(favorite);
+      if (favorite.object_id.toString() === req.body.object_id) {
+        favorite.comment = req.body.comment;
       }
     });
-    
     return user.save();
   })
   .then(() => {
@@ -98,11 +97,11 @@ router.put('/updateComment', (req, res) => {
 router.delete('/deleteFavorite', (req, res, next) => {
   if (req.isAuthenticated()) {
   console.log('------------------deleting favorite----------------');
-  console.log('param',req.query.favorite);
+  console.log('param',req.query.objectId);
   console.log('user',req.user);
   const username = req.user.username;
 
-  Person.updateOne({username}, {$pull: {favorites: {_id: req.query.favorite}}})
+  Person.updateOne({username}, {$pull: {favorites: {object_id: req.query.objectId}}})
   .then(() => {
     // user new updated user
     res.sendStatus(200);

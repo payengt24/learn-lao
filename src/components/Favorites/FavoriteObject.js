@@ -60,7 +60,7 @@ class FavoriteObject extends Component {
         const action = {
             type: FAVORITE_ACTIONS.DELETE,
             payload: {
-                id: this.props.cardObject._id,
+                object_id: this.props.cardObject.object_id,
                 username: this.props.user.userName
             },
         }
@@ -92,7 +92,7 @@ class FavoriteObject extends Component {
 
     handleSaveComment = () => {
         const data = {
-            id: this.props.cardObject._id,
+            object_id: this.props.cardObject.object_id,
             type: this.props.cardObject.type,
             img_path: this.props.cardObject.img_path,
             mp3_path: this.props.cardObject.mp3_path,

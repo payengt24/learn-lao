@@ -7,7 +7,7 @@ const PersonSchema = new Schema({
   username: { type: String, required: true, index: { unique: true } },
   password: { type: String, required: true },
   favorites: [{
-    id: {type: String},
+    object_id: {type: String},
     type: {type: String, required: true},
     img_path: {type: String, required: true},
     mp3_path: {type: String, required: true},

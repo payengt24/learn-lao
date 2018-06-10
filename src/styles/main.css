@@ -224,7 +224,7 @@ bottom:   0;
 }
 
 .image{
-    height: 10vh;
+    height: 8vh;
     background-image: linear-gradient(to right bottom,#7ed56f44, #708090), url(../images/bg.jpg);
     background-size: cover;
     background-position: top;

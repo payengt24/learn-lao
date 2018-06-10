@@ -50,7 +50,9 @@ class Favorites extends Component {
            }
             return (
                 <FavoriteObject cardObject={favorite} path = {path} key={favorite._id}/>
+                
             );
+            
         }))
         
         return (

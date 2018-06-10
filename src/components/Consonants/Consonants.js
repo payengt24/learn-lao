@@ -16,6 +16,9 @@ const mapReduxStateToProps = (reduxState) => ({
 class Consonants extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            favoriteConsonant: [],
+        }
 
     }
   
@@ -24,6 +27,7 @@ class Consonants extends Component {
         type: USER_ACTIONS.FETCH_USER
       });
         this.props.dispatch(getConsonant());
+        console.log('mount, checking this after', this)
     }
 
     componentDidUpdate() {
@@ -32,6 +36,19 @@ class Consonants extends Component {
       }
     }
 
+      filterFavoriteList = () => {
+          console.log('**********checking favorite',this.props.reduxState.user.favorites);
+          this.props.reduxState.user.favorites.forEach((element, index) =>{
+              console.log('favorite element:', element);
+                if(element.type == 'consonant'){
+                    this.setState({
+                        favoriteConsonant: [...this.state.favoriteConsonant, element] 
+                    })
+                }
+          })
+          console.log('---------this.state.favoriteConsonant', this.state.favoriteConsonant)
+      }
+
     logout = () => {
         this.props.dispatch({
           type: LOGIN_ACTIONS.LOGOUT
@@ -39,15 +56,34 @@ class Consonants extends Component {
         this.props.history.push('home');
       }
     
+      isFavorite = (value) => {
+        //   console.log('11111');
+        //   console.log(this.props.reduxState.user.favorites)
+          let found = this.props.reduxState.user.favorites.filter((element) => {
+              console.log(111);
+              console.log(element);
+              if (element.type === 'consonant' && element.object_id === value._id) {
+                return true;
+              } else {
+                  return false;
+              }
+          });
+    
+          if(found.length > 0){
+            return ['none', 'block'];
+          }
+          return ['block', 'none'];
+      } 
+
 
     render() {
-        console.log('this.state', this.state)
-        console.log('sadsdredux', this.props.reduxState.consonant)
-
+        // console.log('this.state', this.state)
+        // console.log('-----sadsdddredux-----', this.props.reduxState)
+        
         let consonantDisplay = this.props.reduxState.consonant.consonant.map(((consonant) => {
-            console.log('img path:', ('data/images/consonants/' + consonant.img_path));
+            // console.log('img path:', ('data/images/consonants/' + consonant.img_path));
             return (
-                <CardObject cardObject={consonant} key={consonant._id} path={'data/images/consonants/'} type={'consonant'} />
+                <CardObject buttonDisplay={this.isFavorite(consonant)} cardObject={consonant} key={consonant._id} path={'data/images/consonants/'} type={'consonant'} />
             );
         }))
 

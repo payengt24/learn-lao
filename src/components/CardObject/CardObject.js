@@ -14,32 +14,31 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-const mapReduxStateToProps = (reduxState) => (
-    { reduxState }
+const mapReduxStateToProps = (reduxState) => ({
+    reduxState,
+    user: reduxState.user,
+}
 );
 
 class CardObject extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            savedHeart: false,
+            displaySave: this.props.buttonDisplay[0],
+            displayUnsave:  this.props.buttonDisplay[1],
         }
-        this.savedHeart = {
-            display: 'block',
+        this.saveFavorite = {
+            display: this.state.displaySave,
         };
-        this.notSavedHeart = {
-            display: 'none',
+        this.removeFavorite = {
+            display: this.state.displayUnsave,
         };
+
     }
 
     handleFavorite = () => {
-        this.flipHeart = !this.flipHeart;
-        this.setState({
-            flipHeart: !this.state.flipHeart
-        })
-
         const data = {
-            id: this.props.cardObject._id,
+            object_id: this.props.cardObject._id,
             type: this.props.type,
             img_path: this.props.cardObject.img_path,
             mp3_path: this.props.cardObject.mp3_path,
@@ -50,21 +49,39 @@ class CardObject extends Component {
         }
 
         this.props.dispatch({ type: FAVORITE_ACTIONS.ADD, payload: data, userName })
-        if (this.state.savedHeart == false) {
-            this.savedHeart = {
-                display: 'none',
-            };
-            this.notSavedHeart = {
-                display: 'block',
-            };
+
+        this.saveFavorite = {
+            display: 'none',
+        };
+        this.removeFavorite = {
+            display: 'block',
+        };
+    }
+
+
+    handleUnFavorite = () => {
+        const action = {
+            type: FAVORITE_ACTIONS.DELETE,
+            payload: {
+                object_id: this.props.cardObject._id,
+                username: this.props.user.userName
+            },
         }
+        // console.log('deleted from handleUnFavorite----------', action);
+        this.props.dispatch(action);
+
+        this.saveFavorite = {
+            display: 'block',
+        };
+        this.removeFavorite = {
+            display: 'none',
+        };
     }
 
 
     render() {
-        console.log('cardDisplay', this.props.path + this.props.cardObject.img_path);
-        console.log('this', this);
-
+        // console.log('cardDisplay', this.props.path + this.props.cardObject.img_path);
+        console.log('this------card', this);
 
         let card = <Card key={this.props.cardObject._id} className='card'>
             <CardMedia
@@ -73,15 +90,15 @@ class CardObject extends Component {
                 title="title"
             />
             <CardActions>
-                <Button style={this.savedHeart} onClick={this.handleFavorite} size="small" color="primary" className="button favorite_border">
+                <Button style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary" className="button favorite_border">
                     <i className="material-icons" >favorite_border</i>
                     <p>Favorite</p>
                 </Button>
 
 
-                <Button style={this.notSavedHeart} size="small" color="primary">
+                <Button style={this.removeFavorite} onClick={this.handleUnFavorite} size="small" color="primary">
                     <i className="material-icons">favorite</i>
-                    <p>Favorite</p>
+                    <p>Un-Favorite</p>
                 </Button>
 
 
