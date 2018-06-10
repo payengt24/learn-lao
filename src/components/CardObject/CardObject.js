@@ -22,8 +22,14 @@ class CardObject extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            flipHeart: false,
+            savedHeart: false,
         }
+        this.savedHeart = {
+            display: 'block',
+        };
+        this.notSavedHeart = {
+            display: 'none',
+        };
     }
 
     handleFavorite = () => {
@@ -44,6 +50,14 @@ class CardObject extends Component {
         }
 
         this.props.dispatch({ type: FAVORITE_ACTIONS.ADD, payload: data, userName })
+        if (this.state.savedHeart == false) {
+            this.savedHeart = {
+                display: 'none',
+            };
+            this.notSavedHeart = {
+                display: 'block',
+            };
+        }
     }
 
 
@@ -59,14 +73,13 @@ class CardObject extends Component {
                 title="title"
             />
             <CardActions>
-                <div onClick={this.handleFavorite}>
-                    <Button size="small" color="primary" className="button favorite_border">
-                        <i className="material-icons" >favorite_border</i>
-                        <p>Favorite</p>
-                    </Button>
-                </div>
+                <Button style={this.savedHeart} onClick={this.handleFavorite} size="small" color="primary" className="button favorite_border">
+                    <i className="material-icons" >favorite_border</i>
+                    <p>Favorite</p>
+                </Button>
 
-                <Button size="small" color="primary">
+
+                <Button style={this.notSavedHeart} size="small" color="primary">
                     <i className="material-icons">favorite</i>
                     <p>Favorite</p>
                 </Button>
