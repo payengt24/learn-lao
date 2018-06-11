@@ -69,9 +69,10 @@ class Favorites extends Component {
                                 <span className="heading-primary-main-register">
                                     {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
                                     Sa-bai-dee
+                                    
                             </span>
                             </h1>
-
+                            {/* <h1 id="welcome">Welcome, {this.props.user.userName}!</h1> */}
                         </div>
                     </div>
                 </header>

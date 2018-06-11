@@ -84,10 +84,10 @@ class RegisterPage extends Component {
             <span className="heading-primary-sub-register">Learn Lao</span>
           </h1>
           {this.renderAlert()}
-          <form onSubmit={this.registerUser} className="form">
-            <h1>Register User</h1>
+          <form onSubmit={this.registerUser} className="form-register container">
+            <h1>Register</h1>
             <div>
-              <label htmlFor="username">
+              <label htmlFor="username container">
                 Username:
               <input
                   type="text"
@@ -98,7 +98,7 @@ class RegisterPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="password">
+              <label htmlFor="password container">
                 Password:
               <input
                   type="password"

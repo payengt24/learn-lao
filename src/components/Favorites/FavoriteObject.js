@@ -166,7 +166,7 @@ class FavoriteObject extends Component {
                 </source>
             </audio>
 
-        let card = <Card key={this.props.cardObject._id} className='card'>
+        let card = <Card key={this.props.cardObject._id} className='card grid-item'>
             <CardMedia onClick={this.playAudio}
                 className='cardMedia'
                 image={(this.props.path + this.props.cardObject.img_path)}
@@ -201,7 +201,7 @@ class FavoriteObject extends Component {
         </Card>
 
         return (
-            <div className="mdc-card">
+            <div className="mdc-card grid-container">
 
                 {card}
                 {audio}

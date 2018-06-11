@@ -78,7 +78,7 @@ class LoginPage extends Component {
           </h1>
 
           {this.renderAlert()}
-          <form onSubmit={this.login} className="form">
+          <form onSubmit={this.login} className="form container">
             <h1>Login</h1>
             <div>
               <label htmlFor="username">
@@ -92,7 +92,7 @@ class LoginPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="password">
+              <label htmlFor="password container">
                 Password:
               <input
                   type="password"
@@ -102,8 +102,8 @@ class LoginPage extends Component {
                 />
               </label>
             </div>
-            <div>
-              <input
+            <div className="container">
+              <input 
                 type="submit"
                 name="submit"
                 value="Log In"

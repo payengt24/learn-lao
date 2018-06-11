@@ -3,6 +3,8 @@ body {
     background-color:  gray;
     
     padding: 30px;
+    
+   
 }
 
 .instructions h1 {
@@ -58,9 +60,11 @@ input[type="submit"] {
 
 .navbar {
   background-color: #546a67;
-  width: 100%;
-  border-radius: 0px;
+  /* width: 100%;
+  border-radius: 0px; */
+  overflow: hidden;
 }
+
 
 ul {
     list-style-type: none;
@@ -199,10 +203,10 @@ bottom:   0;
     }
 }
 
-/* .form {
+.form {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
-} */
+}
 
 
 
@@ -210,8 +214,16 @@ bottom:   0;
 .form {
     opacity: .75;
     border: 2px solid #000;
+    width: 50%;
+    height: auto;
 }
 
+.form-register {
+    opacity: .75;
+    border: 2px solid #000;
+    width: 50%;
+    height: auto;
+}
 
 
 .background-image{
@@ -220,11 +232,15 @@ bottom:   0;
     background-size: cover;
     background-position: top;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)
+    /* border: 2px solid white; */
+    /* border: 2px solid black; */
+    
+    
+    /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%) */
 }
 
 .image{
-    height: 8vh;
+    height: 9vh;
     background-image: linear-gradient(to right bottom,#7ed56f44, #708090), url(../images/bg.jpg);
     background-size: cover;
     background-position: top;
@@ -244,17 +260,21 @@ bottom:   0;
 
 .card {
     display: inline-block;
+    overflow: hidden;
+    float:left;
     height: auto;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
     /* width: 15%; */
     padding: 10px;
     margin: 10px;
-   
+    border: 2px solid black;
+    text-align: center;
  }
 
 
 .material-icons, .button{
     color: black;
 }
+

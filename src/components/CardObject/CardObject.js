@@ -95,7 +95,7 @@ class CardObject extends Component {
                 title="title"
             />
             <CardActions>
-                <Button style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary" className="button favorite_border">
+                <Button className="favorite_border col-sm-2" style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary" className="button favorite_border">
                     <i className="material-icons" >favorite_border</i>
                     <p>Favorite</p>
                 </Button>

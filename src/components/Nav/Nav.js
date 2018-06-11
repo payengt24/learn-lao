@@ -17,9 +17,7 @@ const Nav = (props) => {
   return (
   <div className="navbar">
     <div>
-      <div className="logo">
-      <a className="Logo" href="./image/logo.jpg" />
-      </div>  
+
       <ul>
         <li>
           <Link to="/user">
@@ -53,8 +51,9 @@ const Nav = (props) => {
       </ul>
     </div>
 
-
   </div>
+
+  
 )
 };
 

@@ -61,7 +61,8 @@ class UserPage extends Component {
                 </div>
               </span>
               <span className="heading-primary-main-register">Sa-bai-dee</span>
-              <span className="heading-primary-sub-register">Learn Lao</span>
+              {/* <span className="heading-primary-sub-register">Learn Lao</span> */}
+              <span className="heading-primary-sub-register">Welcome, {this.props.user.userName}!</span>
             </h1>
 
           </div>
