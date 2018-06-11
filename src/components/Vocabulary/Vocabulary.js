@@ -80,7 +80,7 @@ class Vocabulary extends Component {
                     </div>
                 </header>
                 <Nav isLogin="true" />
-                {/* <h2>Vocabulary</h2> */}
+                <h2>Vocabulary</h2>
 
                 {vocabularyDisplay}
 

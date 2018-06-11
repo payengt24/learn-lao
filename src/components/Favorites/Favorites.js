@@ -66,6 +66,7 @@ class Favorites extends Component {
 
                                     </div>
                                 </span>
+                                
                                 <span className="heading-primary-main-register">
                                     {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
                                     Sa-bai-dee
@@ -78,7 +79,7 @@ class Favorites extends Component {
                 </header>
                 <Nav isLogin="true" />
 
-                <h1 id="welcome">Welcome, {this.props.user.userName}!</h1>
+                {/* <h1 id="welcome">Welcome, {this.props.user.userName}!</h1> */}
                 <h2>Favorites</h2>
 
                 {favoriteDisplay}

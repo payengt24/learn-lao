@@ -7,6 +7,11 @@ body {
    
 }
 
+/* #react-root {
+    max-width: 90%;
+    margin: auto; 
+ } */
+
 .instructions h1 {
     font-size: 24px;
     font-weight: 700;
@@ -248,25 +253,15 @@ bottom:   0;
     /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%) */
 }
 
-/* .card{
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    text-align: center; 
-} */
 
 .card {
     display: inline-block;
     overflow: hidden;
-    float:left;
+    float: left;
     height: auto;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-    /* width: 15%; */
+    /* box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); */
     padding: 10px;
     margin: 10px;
     border: 2px solid black;
@@ -277,4 +272,6 @@ bottom:   0;
 .material-icons, .button{
     color: black;
 }
+
+
 

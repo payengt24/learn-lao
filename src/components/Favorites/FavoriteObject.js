@@ -29,6 +29,7 @@ class FavoriteObject extends Component {
             delete: false,
             // save: 'display: none;',
             commentEdit: false,
+            comment: this.props.cardObject.comment,
         };
         this.edit = {
             display: 'block',
@@ -111,9 +112,10 @@ class FavoriteObject extends Component {
         let value = this.state.comment;
         if (value) {
             this.setState({
-                comment: null,
+                comment: this.props.cardObject.comment,
             });
         }
+        this.setState(this.baseState)
     }
 
     handleEditComment = () => {
