@@ -95,15 +95,15 @@ class CardObject extends Component {
                 title="title"
             />
             <CardActions>
-                <Button className="favorite_border col-sm-2" style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary" className="button favorite_border">
+                <Button className="favorite col-sm-12" style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary">
                     <i className="material-icons" >favorite_border</i>
                     <p>Favorite</p>
                 </Button>
 
 
-                <Button style={this.removeFavorite} onClick={this.handleUnFavorite} size="small" color="primary">
+                <Button className="favorite col-sm-12" style={this.removeFavorite} onClick={this.handleUnFavorite} size="small" color="primary">
                     <i className="material-icons">favorite</i>
-                    <p>Un-Favorite</p>
+                    <p>Unfavorite</p>
                 </Button>
 
 
