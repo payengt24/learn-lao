@@ -71,25 +71,28 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div className="background-image">
-        <div className="text-box">
-          <h1 className="heading-primary">
+      <div className="container">
+      <div className="row">  
+      <div className="background-image col-sm-12">
+        <div className="text-box col-sm-12">
+          <h1 className="heading-primary col-sm-12">
             {/* <span className="heading-primary-main">Sabaidi</span> */}
             <span>
-              <div className="logo-box">
+              <div className="logo-box col-sm-12">
                 <img src="data/images/logo.png" alt="Logo" className="logo" />
               </div>
             </span>
-            <span className="heading-primary-main-register">Sa-bai-dee</span>
-            <span className="heading-primary-sub-register">Learn Lao</span>
+            <span className="heading-primary-main-register col-sm-12">Sa-bai-dee</span>
+            <span className="heading-primary-sub-register col-sm-12">Learn Lao</span>
           </h1>
           {this.renderAlert()}
-          <form onSubmit={this.registerUser} className="form-register container">
+          <form onSubmit={this.registerUser} className="form-register col-sm-12">
             <h1>Register</h1>
             <div>
-              <label htmlFor="username container">
+              <label htmlFor="username col-sm-12">
                 Username:
               <input
+               className="col-sm-12"
                   type="text"
                   name="username"
                   value={this.state.username}
@@ -98,9 +101,10 @@ class RegisterPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="password container">
+              <label htmlFor="password col-sm-12">
                 Password:
               <input
+               className="col-sm-12"
                   type="password"
                   name="password"
                   value={this.state.password}
@@ -118,6 +122,8 @@ class RegisterPage extends Component {
             </div>
           </form>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

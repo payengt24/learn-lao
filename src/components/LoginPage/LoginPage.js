@@ -64,26 +64,28 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="background-image">
-        <div className="text-box">
-          <h1 className="heading-primary">
-            {/* <span className="heading-primary-main">Sabaidi</span> */}
+      <div className="container">
+        <div className="row">
+      <div className="background-image col-sm-12" >
+        <div className="text-box col-sm-12">
+          <h1 className="heading-primary col-sm-12">
             <span>
-              <div className="logo-box">
+              <div className="logo-box col-sm-12">
                 <img src="data/images/logo.png" alt="Logo" className="logo" />
               </div>
             </span>
-            <span className="heading-primary-main">Sa-bai-dee</span>
-            <span className="heading-primary-sub">Learn Lao</span>
+            <span className="heading-primary-main col-sm-12">Sa-bai-dee</span>
+            <span className="heading-primary-sub col-sm-12">Learn Lao</span>
           </h1>
 
           {this.renderAlert()}
-          <form onSubmit={this.login} className="form container">
+          <form onSubmit={this.login} className="form col-sm-12">
             <h1>Login</h1>
             <div>
-              <label htmlFor="username">
+              <label htmlFor="username col-sm-12">
                 Username:
-              <input
+              <input 
+                  className="col-sm-12"
                   type="text"
                   name="username"
                   value={this.state.username}
@@ -92,9 +94,10 @@ class LoginPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="password container">
+              <label htmlFor="password col-sm-12">
                 Password:
               <input
+                  className="col-sm-12"
                   type="password"
                   name="password"
                   value={this.state.password}
@@ -102,7 +105,7 @@ class LoginPage extends Component {
                 />
               </label>
             </div>
-            <div className="container">
+            <div className="col-sm-12">
               <input 
                 type="submit"
                 name="submit"
@@ -112,6 +115,8 @@ class LoginPage extends Component {
             </div>
           </form>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

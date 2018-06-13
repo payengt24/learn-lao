@@ -108,7 +108,7 @@ class FavoriteObject extends Component {
 
                 SweetAlert.fire(
                     'Deleted!',
-                    'Your file has been deleted.',
+                    'Your favorite has been deleted.',
                     'success'
                 )
 
@@ -118,7 +118,8 @@ class FavoriteObject extends Component {
             ) {
                 SweetAlert.fire(
                     'Cancelled',
-                    'Your imaginary file is safe :)',
+                    // 'Your favorixte is safe :) ☺',
+                    'Your favorite is safe ☺',
                     'error'
                 )
             }
