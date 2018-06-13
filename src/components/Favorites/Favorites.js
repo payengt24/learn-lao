@@ -57,7 +57,7 @@ class Favorites extends Component {
         
         return (
             <div className="favorite">
-                {/* <header>
+                <header>
                     <div className="image">
                         <div className="text-box-user">
                             <h1 className="heading-primary">
@@ -67,16 +67,16 @@ class Favorites extends Component {
                                     </div>
                                 </span>
                                 
-                                <span className="heading-primary-main-register">
-                                    {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
-                                    {/* Sa-bai-dee */}
+                                 <span className="heading-primary-main-register">
+                                    {/* {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
+                                    Sa-bai-dee
                                     
-                            {/* </span> */}
-                            {/* </h1> */}
+                            </span>
+                            </h1>
                             {/* <h1 id="welcome">Welcome, {this.props.user.userName}!</h1> */}
-                        {/* </div> */}
-                    {/* </div> */}
-                {/* </header>  */}
+                        </div>
+                    </div>
+                </header> 
                 <Nav isLogin="true" />
 
                 {/* <h1 id="welcome">Welcome, {this.props.user.userName}!</h1> */}
