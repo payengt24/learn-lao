@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FAVORITE_ACTIONS } from '../../redux/actions/favoriteActions';
+import swal from 'sweetalert2/dist/sweetalert2.all';
 
+import withReactContent from 'sweetalert2-react-content/dist/sweetalert2-react-content.cjs'
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -20,6 +22,8 @@ const mapReduxStateToProps = (reduxState) => ({
 }
 );
 
+const SweetAlert = withReactContent(swal);
+
 class FavoriteObject extends Component {
 
     constructor(props) {
@@ -30,6 +34,7 @@ class FavoriteObject extends Component {
             // save: 'display: none;',
             commentEdit: false,
             comment: this.props.cardObject.comment,
+            alert: null,
         };
         this.edit = {
             display: 'block',
@@ -56,38 +61,69 @@ class FavoriteObject extends Component {
     }
 
     handleDelete = () => {
-        console.log('reduxsdasd', this)
-        const action = {
-            type: FAVORITE_ACTIONS.DELETE,
-            payload: {
-                object_id: this.props.cardObject.object_id,
-                username: this.props.user.userName
-            },
-        }
-        console.log('my action', action);
-        this.props.dispatch(action);
-        if (this.state.delete == false) {
 
-            this.delete = {
-                display: 'none',
-            };
-            this.cancel = {
-                display: 'block',
-            };
-            this.setState({
-                delete: true,
-            })
-        } else {
-            this.delete = {
-                display: 'block',
-            };
-            this.cancel = {
-                display: 'none',
-            };
-            this.setState({
-                delete: false,
-            })
-        }
+        SweetAlert.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+
+                // console.log('reduxsdasd', this);
+                const action = {
+                    type: FAVORITE_ACTIONS.DELETE,
+                    payload: {
+                        object_id: this.props.cardObject.object_id,
+                        username: this.props.user.userName
+                    },
+                }
+                // console.log('my action', action);
+                this.props.dispatch(action);
+                if (this.state.delete == false) {
+        
+                    this.delete = {
+                        display: 'none',
+                    };
+                    this.cancel = {
+                        display: 'block',
+                    };
+                    this.setState({
+                        delete: true,
+                    })
+                } else {
+                    this.delete = {
+                        display: 'block',
+                    };
+                    this.cancel = {
+                        display: 'none',
+                    };
+                    this.setState({
+                        delete: false,
+                    })
+                }
+
+                SweetAlert.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+
+            } else if (
+                // Read more about handling dismissals
+                result.dismiss === SweetAlert.DismissReason.cancel
+            ) {
+                SweetAlert.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        })
+
     }
 
     handleSaveComment = () => {
@@ -172,7 +208,7 @@ class FavoriteObject extends Component {
             <CardMedia onClick={this.playAudio}
                 className='cardMedia'
                 image={(this.props.path + this.props.cardObject.img_path)}
-                title="title"
+                title="click for audio"
             />
 
 

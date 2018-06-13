@@ -90,9 +90,9 @@ class CardObject extends Component {
 
         let card = <Card key={this.props.cardObject._id} className='card'>
             <CardMedia onClick={this.playAudio}
-                className='cardMedia'
+                className='cardMedia cardImage'
                 image={(this.props.path + this.props.cardObject.img_path)}
-                title="title"
+                title="click for audio"
             />
             <CardActions>
                 <Button className="favorite col-sm-12" style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary">

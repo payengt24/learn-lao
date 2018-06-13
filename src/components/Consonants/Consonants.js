@@ -73,25 +73,25 @@ class Consonants extends Component {
         }))
 
         return (
-            <div>
-                <header>
-                    <div className="image">
-                        <div className="text-box-user">
-                            <h1 className="heading-primary">
-                                <span>
-                                    <div className="logo-box">
+            <div className="background">
+                {/* <header> */}
+                    {/* <div className="image"> */}
+                        {/* <div className="text-box-user"> */}
+                            {/* <h1 className="heading-primary"> */}
+                                {/* <span> */}
+                                    {/* <div className="logo-box"> */}
 
-                                    </div>
-                                </span>
-                                <span className="heading-primary-main-register">
+                                    {/* </div> */}
+                                {/* </span> */}
+                                {/* <span className="heading-primary-main-register"> */}
                                     {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
-                                    Sa-bai-dee
-                            </span>
-                            </h1>
+                                    {/* Sa-bai-dee */}
+                            {/* </span> */}
+                            {/* </h1> */}
 
-                        </div>
-                    </div>
-                </header>
+                        {/* </div> */}
+                    {/* </div> */}
+                {/* </header> */}
                 <Nav isLogin="true" onClick={this.logout}/>
                 <h2>Consonants</h2>
 

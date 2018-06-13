@@ -50,7 +50,7 @@ class UserPage extends Component {
 
     console.log(this);
     return (
-      <div className="background">
+      <div className="background col-sm-12">
         <div className="homePage">
           {/* {content} */}
           <div className="text-box-user">
