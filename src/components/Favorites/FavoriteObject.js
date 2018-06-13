@@ -84,7 +84,7 @@ class FavoriteObject extends Component {
                 // console.log('my action', action);
                 this.props.dispatch(action);
                 if (this.state.delete == false) {
-        
+
                     this.delete = {
                         display: 'none',
                     };
@@ -200,14 +200,17 @@ class FavoriteObject extends Component {
     render() {
         let audio =
             <audio ref={(sound) => { this.sound = sound; }}>
-                <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+                {/* <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+                </source> */}
+                <source src={this.props.cardObject.mp3_path} type="audio/mpeg" >
                 </source>
             </audio>
 
         let card = <Card key={this.props.cardObject._id} className='card grid-item'>
             <CardMedia onClick={this.playAudio}
                 className='cardMedia'
-                image={(this.props.path + this.props.cardObject.img_path)}
+                // image={(this.props.path + this.props.cardObject.img_path)}
+                image={this.props.cardObject.img_path}
                 title="click for audio"
             />
 
