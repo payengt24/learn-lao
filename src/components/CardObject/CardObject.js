@@ -82,7 +82,9 @@ class CardObject extends Component {
     render() {
         let audio =
         <audio ref={(sound) => { this.sound = sound; }}>
-            <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+            {/* <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
+            </source> */}
+            <source src={this.props.cardObject.mp3_path} type="audio/mpeg" >
             </source>
         </audio>
         // console.log('cardDisplay', this.props.path + this.props.cardObject.img_path);
@@ -91,7 +93,8 @@ class CardObject extends Component {
         let card = <Card key={this.props.cardObject._id} className='card'>
             <CardMedia onClick={this.playAudio}
                 className='cardMedia cardImage'
-                image={(this.props.path + this.props.cardObject.img_path)}
+                // image={(this.props.path + this.props.cardObject.img_path)}
+                image={this.props.cardObject.img_path}
                 title="click for audio"
             />
             <CardActions>

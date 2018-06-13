@@ -73,7 +73,7 @@ class Consonants extends Component {
         }))
 
         return (
-            <div className="background">
+            <div className="backgroundss">
                 {/* <header> */}
                     {/* <div className="image"> */}
                         {/* <div className="text-box-user"> */}
