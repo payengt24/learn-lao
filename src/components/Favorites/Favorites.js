@@ -56,7 +56,7 @@ class Favorites extends Component {
         }))
         
         return (
-            <div className="backgrounds">
+            <div className="favorite">
                 {/* <header>
                     <div className="image">
                         <div className="text-box-user">
