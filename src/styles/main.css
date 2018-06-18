@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color:  gray;
     
-    padding: 30px;
+    /* padding: 30px; */
     
    
 }
@@ -108,11 +108,12 @@ li a:hover {
 
 .text-box {
     position: absolute;
-    min-height: 200px;
+    min-height: 100px;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    /* text-size-adjust:  */
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 }
 
@@ -222,20 +223,22 @@ li a:hover {
 .form {
     opacity: .75;
     border: 2px solid #000;
-    width: 30%;
+    width: 20%;
     height: auto;
+    min-width: 250px;
 }
 
 .form-register {
     opacity: .75;
     border: 2px solid #000;
-    width: 30%;
+    width: 20%;
     height: auto;
+    min-width: 250px;
 }
 
 
 .background-image{
-    height: 95vh;
+    height: 100vh;
     background-image: linear-gradient(to right bottom,#7ed56f44, #708090), url(../images/bg.jpg);
     background-size: cover;
     background-position: top;
@@ -271,16 +274,17 @@ li a:hover {
 
 
 .card {
-    display: inline-block;
-    overflow: hidden;
+    /* display: inline-block; */
+    /* overflow: hidden; */
     float: left;
     height: auto;
-    border-radius: 5px;
+    width: 250px;
+    /* border-radius: 5px; */
     background-color: #fff;
     padding: 10px;
     margin: 10px;
     border: 2px solid black;
-    text-align: center;
+
  }
 
 
@@ -295,4 +299,9 @@ li {
 
 .card:hover {
     color: lightgrey;
+}
+
+.backgroundss{
+
+    text-align: center;
 }

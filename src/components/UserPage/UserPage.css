@@ -1,9 +1,10 @@
 .background{
-    height: 95vh;
+    height: 100vh;
     background-image: linear-gradient(to right bottom,#7ed56f44, #708090), url(../../images/bg.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
+    /* margin-top: 20px; */
     /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%) */
 }
 

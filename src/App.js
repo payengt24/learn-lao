@@ -22,7 +22,7 @@ import Favorites from './components/Favorites/Favorites';
 import './styles/main.css';
 
 const App = () => (
-  <div className='app-div container-fluid '>
+  <div className='app-div'>
     {/* <Header title="Project Base" /> */}
     <Router>
       <Switch>

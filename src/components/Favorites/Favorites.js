@@ -56,7 +56,7 @@ class Favorites extends Component {
         }))
         
         return (
-            <div className="favorite">
+            <div className="favorite backgroundss">
                 <header>
                     <div className="image">
                         <div className="text-box-user">
@@ -80,10 +80,10 @@ class Favorites extends Component {
                 <Nav isLogin="true" />
 
                 {/* <h1 id="welcome">Welcome, {this.props.user.userName}!</h1> */}
-                <h2>Favorites</h2>
-
+                {/* <h2>Favorites</h2> */}
+                <div className="container">
                 {favoriteDisplay}
-
+                </div>
             </div>
         );
 

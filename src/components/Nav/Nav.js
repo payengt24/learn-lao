@@ -20,7 +20,7 @@ const Nav = (props) => {
   console.log(props);
   const loginButton = props.isLogin ? (
     <li >
-      <Link onClick={this.logout} to="/">
+      <Link onClick={logout} to="/">
         Logout
       </Link>
     </li>
@@ -66,42 +66,54 @@ const Nav = (props) => {
         </ul>
       </div>
 
-      
+
 
     </div>
 
-    
 
-    // <div id="navWrapper">
-    //   <div class="container">
 
-    //     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    //     <li>
-    //       <img src="data/images/logo.png" alt="Logo" className="logo" />
-    //     </li>
-    //       <a class="navbar-brand" href="#home"><Link to="/user">Home</Link></a>
-
-    //       <ul class="navbar-nav">
-
-    //         <li class="nav-item">
-    //           <a class="nav-link" href="#consonants"><Link to="/consonants">Consonants</Link></a>
+    // <div>
+    //   <div className="collapse" id="navbarToggleExternalContent">
+    //     <div className="bg-dark p-4">
+    //       <ul>
+    //         <li>
+    //           <Link to="/user">
+    //             Home
+    //           </Link>
     //         </li>
-    //         <li class="nav-item">
-    //           <a class="nav-link" href="#vowels"><Link to="/vowels">Vowels</Link></a>
+    //         <li>
+    //           <Link to="/consonants">
+    //             Consonants
+    //           </Link>
     //         </li>
-    //         <li class="nav-item">
-    //           <a class="nav-link" href="#vocabulary"><Link to="/vocabulary">Vocabulary</Link></a>
+    //         <li>
+    //           <Link to="/vowels">
+    //             Vowels
+    //           </Link>
     //         </li>
-    //         <li class="nav-item">
-    //           <a class="nav-link" href="#favorites"><Link to="/favorites">Favorites</Link></a>
+    //         <li>
+    //           <Link to="/vocabulary">
+    //             Vocabulary
+    //           </Link>
     //         </li>
+    //         <li>
+    //           <Link to="/favorites">
+    //             Favorites
+    //         </Link>
+    //         </li>
+    //         {loginButton}
+    //         {/* <li><button className="logOutButton" onClick={this.logout}>Log Out</button></li> */}
     //       </ul>
-    //     </nav>
+    //     </div>
     //   </div>
+    //   <nav className="navbar navbar-dark bg-dark">
+    //     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    //       <span className="navbar-toggler-icon"></span>
+    //     </button>
+    //   </nav>
     // </div>
 
-
-)
+  )
 };
 
 export default connect(mapStateToProps)(Nav);

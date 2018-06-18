@@ -62,7 +62,7 @@ class Vocabulary extends Component {
         return (
             <div>
                 <header>
-                    <div className="image">
+                    <div className="image backgroundss">
                         <div className="text-box-user">
                             <h1 className="heading-primary">
                                 <span>
@@ -80,10 +80,10 @@ class Vocabulary extends Component {
                     </div>
                 </header>
                 <Nav isLogin="true" />
-                <h2>Vocabulary</h2>
-
+                {/* <h2>Vocabulary</h2> */}
+                <div className="container">
                 {vocabularyDisplay}
-
+                </div>
             </div>
         );
 

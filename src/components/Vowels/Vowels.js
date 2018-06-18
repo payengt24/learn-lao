@@ -67,7 +67,7 @@ class Vowels extends Component {
         return (
             <div>
                 <header>
-                    <div className="image">
+                    <div className="image backgroundss">
                         <div className="text-box-user">
                             <h1 className="heading-primary">
                                 <span>
@@ -85,10 +85,10 @@ class Vowels extends Component {
                     </div>
                 </header>
                 <Nav isLogin="true" />
-                <h2>Vowels</h2>
-
+                {/* <h2>Vowels</h2> */}
+                <div className="container">
                 {vowelDisplay}
-
+            </div>
             </div>
         );
 

@@ -93,9 +93,11 @@ class Consonants extends Component {
                     </div>
                 </header>
                 <Nav isLogin="true" onClick={this.logout}/>
-                <h2>Consonants</h2>
+                {/* <h2>Consonants</h2> */}
+                <div className="container">
 
                 {consonantDisplay}
+                </div>
             </div>
         );
 

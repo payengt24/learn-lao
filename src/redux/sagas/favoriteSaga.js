@@ -64,6 +64,10 @@ function* updateFavorite(action) {
     try {
         yield updateFavoriteComment(action.payload);
         const user = yield getFavorite();
+        yield put ({
+            type: USER_ACTIONS.SET_FAVORITES,
+            user
+        })
 
         // yield put({
         //     type: FAVORITE_ACTIONS.SET,

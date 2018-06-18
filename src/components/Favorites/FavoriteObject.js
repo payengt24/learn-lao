@@ -146,12 +146,16 @@ class FavoriteObject extends Component {
 
     handleCancelButton = () => {
         this.handleEditComment();
-        let value = this.state.comment;
-        if (value) {
+        if(this.props.cardObject.comment == null || ''){
+            this.setState({
+                comment: '',
+            });
+        }else{
             this.setState({
                 comment: this.props.cardObject.comment,
             });
         }
+
         this.setState(this.baseState)
     }
 

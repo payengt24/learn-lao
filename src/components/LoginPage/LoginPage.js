@@ -64,8 +64,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
+
       <div className="background-image col-sm-12" >
         <div className="text-box col-sm-12">
           <h1 className="heading-primary col-sm-12">
@@ -115,8 +114,6 @@ class LoginPage extends Component {
             </div>
           </form>
         </div>
-      </div>
-      </div>
       </div>
     );
   }

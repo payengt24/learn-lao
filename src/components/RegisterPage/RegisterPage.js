@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './RegisterPage.css'
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -71,9 +72,8 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div className="container">
-      <div className="row">  
-      <div className="background-image col-sm-12">
+
+      <div className="background-image">
         <div className="text-box col-sm-12">
           <h1 className="heading-primary col-sm-12">
             {/* <span className="heading-primary-main">Sabaidi</span> */}
@@ -122,8 +122,6 @@ class RegisterPage extends Component {
             </div>
           </form>
         </div>
-      </div>
-      </div>
       </div>
     );
   }
