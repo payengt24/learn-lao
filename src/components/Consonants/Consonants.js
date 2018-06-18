@@ -76,13 +76,10 @@ class Consonants extends Component {
             <div className="backgroundss">
                 <header>
                     <div className="image">
-                        <div className="text-box-user">
+                        <div className="container">
+                        <div className="row">
+                        <div className="col">
                             <h1 className="heading-primary">
-                                <span>
-                                    <div className="logo-box">
-
-                                    </div>
-                                </span>
                                 <span className="heading-primary-main-register">
                                     {/* <img src="data/images/logo.png" alt="Logo" className="logo" /> */}
                                     Sa-bai-dee
@@ -90,13 +87,17 @@ class Consonants extends Component {
                             </h1>
 
                         </div>
+                        </div>
+                        </div>
                     </div>
                 </header>
                 <Nav isLogin="true" onClick={this.logout}/>
                 {/* <h2>Consonants</h2> */}
                 <div className="container">
 
-                {consonantDisplay}
+                    <div className="row">
+                    {consonantDisplay}
+                    </div>
                 </div>
             </div>
         );

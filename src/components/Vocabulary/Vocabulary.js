@@ -82,7 +82,9 @@ class Vocabulary extends Component {
                 <Nav isLogin="true" />
                 {/* <h2>Vocabulary</h2> */}
                 <div className="container">
+                <div className="row">
                 {vocabularyDisplay}
+                </div>
                 </div>
             </div>
         );

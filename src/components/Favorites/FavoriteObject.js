@@ -224,21 +224,21 @@ class FavoriteObject extends Component {
 
             <CardActions>
 
-                <Button style={this.save} size="small" color="primary" className="button save" onClick={this.handleSaveComment}>
+                <Button style={this.save} size="small" color="primary"  onClick={this.handleSaveComment}>
                     <i className="material-icons">save</i>
-                    <p>Save</p>
+                    <p className="iconText">Save</p>
                 </Button>
-                <Button style={this.edit} size="small" color="primary" className="button edit" onClick={this.handleEditComment}>
+                <Button style={this.edit} size="small" color="primary"  onClick={this.handleEditComment}>
                     <i className="material-icons">edit</i>
-                    <p>Edit Comment</p>
+                    <p className="iconText">Edit Comment</p>
                 </Button>
-                <Button style={this.cancel} size="small" color="primary" className="button cancel" onClick={this.handleCancelButton}>
+                <Button style={this.cancel} size="small" color="primary"  onClick={this.handleCancelButton}>
                     <i className="material-icons">cancel</i>
-                    <p>Cancel</p>
+                    <p className="iconText">Cancel</p>
                 </Button>
-                <Button style={this.delete} size="small" color="primary" className="button delete" onClick={this.handleDelete}>
+                <Button style={this.delete} size="small" color="primary"  onClick={this.handleDelete}>
                     <i className="material-icons" >delete</i>
-                    <p>Delete</p>
+                    <p className="iconText">Delete</p>
                 </Button>
 
             </CardActions>
@@ -247,7 +247,7 @@ class FavoriteObject extends Component {
         </Card>
 
         return (
-            <div className="mdc-card grid-container">
+            <div className="col-sm-12 col-md-4 col-lg-3">
 
                 {card}
                 {audio}

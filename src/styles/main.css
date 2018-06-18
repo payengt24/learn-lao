@@ -117,36 +117,114 @@ li a:hover {
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 }
 
+
+
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 60px;
-}
-
-.heading-primary-main {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 35px;
-
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; 
-
 
 }
 
-.heading-primary-sub {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 17.4px;
-
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; 
+@media (min-width: 600px) {
+    html {
+        font-size: 18px;
+    }
+    .heading-primary-main{
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+    
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; 
+    
+    }
+    .heading-primary-sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 17.4px;
+    
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; 
+    }
+    .heading-primary-main-register{
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+    
+    }
+    
+    .heading-primary-sub-register{
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 17.4px;
+    }
+    .text-box-user {
+        position: relative;
+        text-align: center;
+        /* text-size-adjust:  */
+        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    }
 }
+
+
+@media (max-width: 590px) {
+    html {
+        font-size: 12px;
+    }
+    .heading-primary-main{
+        display: block;
+        font-size: 30px;
+        font-weight: 200;
+        letter-spacing: 35px;
+    
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; 
+    
+    }
+    .heading-primary-sub {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 17.4px;
+    
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; 
+    }
+    .heading-primary-main-register{
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 15px;
+    
+    }
+
+    .heading-primary-sub-register{
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 17.4px;
+    }
+
+    .text-box-user {
+        position: relative;
+        text-align: center;
+        /* text-size-adjust:  */
+        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    }
+}
+
+
+
 
 @keyframes moveInLeft {
     0%{
@@ -176,20 +254,6 @@ li a:hover {
     }
 }
 
-.heading-primary-main-register{
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 35px;
-
-}
-
-.heading-primary-sub-register{
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 17.4px;
-}
 
 .log-box{
     position: absolute;
@@ -304,4 +368,9 @@ li {
 .backgroundss{
 
     text-align: center;
+}
+
+
+.iconText {
+    font-size: 13px;
 }

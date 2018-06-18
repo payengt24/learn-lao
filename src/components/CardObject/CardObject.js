@@ -116,7 +116,7 @@ class CardObject extends Component {
 
         return (
 
-            <div>
+            <div className="col-sm-12 col-md-4 col-lg-3">
                 {card}
                 {audio}
             </div>

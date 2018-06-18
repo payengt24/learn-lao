@@ -87,7 +87,9 @@ class Vowels extends Component {
                 <Nav isLogin="true" />
                 {/* <h2>Vowels</h2> */}
                 <div className="container">
+                <div className="row">
                 {vowelDisplay}
+                </div>
             </div>
             </div>
         );

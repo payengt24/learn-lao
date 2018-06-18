@@ -82,7 +82,9 @@ class Favorites extends Component {
                 {/* <h1 id="welcome">Welcome, {this.props.user.userName}!</h1> */}
                 {/* <h2>Favorites</h2> */}
                 <div className="container">
+                <div className="row">
                 {favoriteDisplay}
+                </div>
                 </div>
             </div>
         );
