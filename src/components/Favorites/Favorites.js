@@ -36,7 +36,7 @@ class Favorites extends Component {
 
     render() {
 
-        console.log('this.state   sdfs favorite', this)
+        console.log('this.state sdfs favorite', this)
         console.log('sadsdredux favorite', this.props.user.favorites)
 
         let path = ''

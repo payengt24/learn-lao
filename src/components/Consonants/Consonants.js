@@ -68,7 +68,7 @@ class Consonants extends Component {
         let consonantDisplay = this.props.reduxState.consonant.consonant.map(((consonant) => {
             // console.log('img path:', ('data/images/consonants/' + consonant.img_path));
             return (
-                <CardObject buttonDisplay={this.isFavorite(consonant)} cardObject={consonant} key={consonant._id} path={'data/images/consonants/'} type={'consonant'} />
+                <CardObject buttonDisplay={this.isFavorite(consonant)} cardObject={consonant} key={consonant._id} path={'data/'} type={'consonant'} />
             );
         }))
 

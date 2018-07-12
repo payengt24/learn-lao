@@ -207,7 +207,7 @@ class FavoriteObject extends Component {
             <audio ref={(sound) => { this.sound = sound; }}>
                 {/* <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" >
                 </source> */}
-                <source src={this.props.cardObject.mp3_path} type="audio/mpeg" >
+                <source src={('data/mp3/' + this.props.cardObject.mp3_path)}  type="audio/mpeg" >
                 </source>
             </audio>
 
@@ -215,7 +215,7 @@ class FavoriteObject extends Component {
             <CardMedia onClick={this.playAudio}
                 className='cardMedia'
                 // image={(this.props.path + this.props.cardObject.img_path)}
-                image={this.props.cardObject.img_path}
+                image={('data/img/' + this.props.cardObject.img_path)}
                 title="click for audio"
             />
 
