@@ -74,3 +74,6 @@ This is the build Heroku will run, but during development, you will likely not n
 1. Create the necessary tables
 1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
 1. In the deploy section, select manual deploy
+
+
+![alt text](screenshots/learn-lao.png "Description goes here")
