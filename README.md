@@ -76,4 +76,4 @@ This is the build Heroku will run, but during development, you will likely not n
 1. In the deploy section, select manual deploy
 
 
-![alt text](screenshots/learn-lao.png "Description goes here")
+![App](documentation/images/vscode-learn-lao.png)
