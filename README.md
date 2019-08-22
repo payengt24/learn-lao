@@ -1,7 +1,16 @@
-# Express/Passport with React
+# SA-BAI-DEE
+
+Application for anyone to learn basic Lao on the go. On this app you can find all the constants, vowels, and vocabulary in order to survive living in Laos! Have fun using it!
+
+![Image of application](app.png)
+
+Before you get started make sure to read through **ALL** requirements and outline.
+
+
+## Express/Passport with React
 This version uses React to control the login requests and redirection in coordination with client-side routing.
 
-We **STONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+I **STONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
 
 ## Prerequisites
 
