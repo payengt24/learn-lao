@@ -10,7 +10,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 
-
 const mapReduxStateToProps = (reduxState) => ({
     reduxState,
     user: reduxState.user,
@@ -92,6 +91,7 @@ class CardObject extends Component {
                 image={('data/img/' + this.props.cardObject.img_path)}
                 // image={this.props.cardObject.img_path}
                 title="click for audio"
+                style={{}}
             />
             <CardActions>
                 <Button className="favorite col-sm-12" style={this.saveFavorite} onClick={this.handleFavorite} size="small" color="primary">
@@ -115,7 +115,7 @@ class CardObject extends Component {
 
         return (
 
-            <div className="col-sm-12 col-md-4 col-lg-3">
+            <div style={{cursor: 'pointer'}} className="col-sm-12 col-md-4 col-lg-3">
                 {card}
                 {audio}
             </div>
