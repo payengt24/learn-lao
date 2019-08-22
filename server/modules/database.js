@@ -18,7 +18,8 @@ if (process.env.MONGODB_URI) {
   mongoURI = 'mongodb://localhost:27017/prime_app';
 }
 
-mongoose.connect(mongoURI);
+
+mongoose.connect(mongoURI, {useCreateIndex: true, useNewUrlParser: true });
 
 mongoose.connection.once('open', () => {
   console.log('Mongo connected');

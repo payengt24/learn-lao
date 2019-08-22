@@ -18,6 +18,7 @@ const VowelRouter = require('./routes/vowel.router');
 const VocabularyRouter = require('./routes/vocabulary.router');
 
 
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

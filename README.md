@@ -15,11 +15,19 @@ Before you get started, make sure you have the following software installed on y
 
 Create a new database called `prime_app` and a collection called `person`.
 
-## Download (Don't Clone) This Repository
+**Import data**
 
-* Don't Fork or Clone. Instead, click the `Clone or Download` button and select `Download Zip`.
-* Unzip the project and start with the code in that folder.
-* Create a new GitHub project and push this code to the new repository.
+```
+mongoimport --db prime_app --collection vocabularies --file vocabularies.csv --type csv --headerline
+```
+
+```
+mongoimport --db prime_app --collection consonants --file consonants.csv --type csv --headerline
+```
+
+```
+mongoimport --db prime_app --collection vowels --file vowels.csv --type csv --headerline
+```
 
 ## Development Setup Instructions
 
